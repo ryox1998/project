@@ -3,12 +3,10 @@
 @section('content')
 
 @if ($message = Session::get('success'))
-    <div class="alert alert-success">
-        <p>{{$message}}</p>
-    </div>
+<div class="alert alert-success">
+    <p>{{ $message }}</p>
+</div>
 @endif
-
-    <h1>fecth data</h1>
 
     <a href="{{route('contents.create')}}"> create </a>
 
@@ -46,10 +44,14 @@
                 <td>{{$content->long}}</td>
                 <td><img src="{{ Storage::url($content->image) }}" height="75" width="75" alt="" /></td>
                 <td>{{$content->created_at}}</td>
-                <td><a class="btn btn-primary" href="{{ route('contents.edit',$content->id) }}">Edit</a></td>
-                    @csrf
-                    @method('DELETE')
-                <td><button type="submit" class="btn btn-danger">Delete</button></td>
+                <td>
+                    <form action="{{ route('contents.destroy',$content->id) }}" method="POST">
+                        <a class="btn btn-primary" href="{{ route('contents.edit',$content->id) }}">Edit</a>    </td>
+                        @csrf
+                        @method('DELETE')
+                        <td>  <button type="submit" class="btn btn-danger">Delete</button> 
+                    </form> </td>
+             
               </tr>
         </tbody>
 

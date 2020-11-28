@@ -135,6 +135,8 @@ class ContentCRUDController extends Controller
     public function destroy(Content $content)
     {
         $content->delete();
-        return redirect()->route ('contents.index')->with('success','Content has been deleted successfuly.');
+    
+        return redirect()->route('contents.index')
+                        ->with('success','Content has been deleted successfully');
     }
 }
