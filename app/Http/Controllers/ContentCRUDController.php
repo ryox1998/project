@@ -86,7 +86,7 @@ class ContentCRUDController extends Controller
     {
         return view('contents.edit',compact('content'));
     }
-    
+
     /**
      * Update the specified resource in storage.
      *
@@ -94,6 +94,7 @@ class ContentCRUDController extends Controller
      * @param  \App\content  $content
      * @return \Illuminate\Http\Response
      */
+
     public function update(Request $request, $id)
     {
         $request->validate([

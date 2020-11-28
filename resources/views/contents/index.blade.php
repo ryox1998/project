@@ -51,7 +51,6 @@
                         @method('DELETE')
                         <td>  <button type="submit" class="btn btn-danger">Delete</button> 
                     </form> </td>
-             
               </tr>
         </tbody>
 
@@ -83,6 +82,7 @@
               <a href=""><i class="icofont-instagram"></i></a>
               <a href=""><i class="icofont-linkedin"></i></a>
               <p>เขียนเมื่อ {{$content->created_at}}</p>
+              <a  href="{{ route('contents.show',$content->id) }}">คลิกเพื่ออ่าน</a>
             </div>
           </div>
         </div>
