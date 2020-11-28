@@ -11,11 +11,12 @@
 
 <h1>INSERT DATA</h1>
 
-<form action="{{ route('contents.store')}}" method="POST" enctype="multipart/form-data">
+<form action="{{ route('contents.update',$content->id) }}" method="POST" enctype="multipart/form-data">
     @csrf
+    @method('PUT')
     <div class="form-group">
       <label for="name">ชื่อสถานที่ท่องเที่ยว :</label>
-      <input type="text" class="form-control" name="name" placeholder="สะพานแขวน 200 ปี">
+      <input type="text" class="form-control" name="name" value="{{$content->name}}">
       @error('name')
       <div class="alert alert-success mb-1 mt-1">{{$message}}</div>
       @enderror
@@ -23,7 +24,7 @@
 
     <div class="form-group">
         <label for="detail">รายละเอียด :</label>
-        <textarea class="form-control" name="detail" rows="3" placeholder="Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga, assumenda."></textarea>
+        <textarea class="form-control" name="detail" rows="3" placeholder="content detail">{{ $content->detail }}</textarea>
         @error('detail')
         <div class="alert alert-success mb-1 mt-1">{{$message}}</div>
         @enderror
@@ -31,7 +32,7 @@
 
       <div class="form-group">
         <label for="ampher">อำเภอ :</label>
-        <select class="form-control" name="ampher">
+        <select class="form-control" name="ampher" >
           <option>เมืองตาก</option>
           <option>บ้านตาก</option>
           <option>สามเงา</option>
@@ -91,7 +92,7 @@
 
       <div class="form-group">
         <label for="lat">Latitude :</label>
-        <input type="text" class="form-control" name="lat" placeholder="16.5239306">
+        <input type="text" class="form-control" name="lat" value="{{$content->lat}}">
         @error('lat')
         <div class="alert alert-success mb-1 mt-1">{{$message}}</div>
         @enderror
@@ -99,7 +100,7 @@
 
       <div class="form-group">
         <label for="long">Longitude :</label>
-        <input type="text" class="form-control" name="long" placeholder="97.4941504">
+        <input type="text" class="form-control" name="long" value="{{$content->long}}">
         @error('long')
         <div class="alert alert-success mb-1 mt-1">{{$message}}</div>
         @enderror
@@ -113,10 +114,17 @@
             <div class="alert alert-success mb-1 mt-1">{{$message}}</div>
             @enderror
         </div>
+      </div>
+
+      <div class="form-group mt-5">
+        <img src="{{ Storage::url($content->image) }}" height="200" width="200" alt="" />
+      </div>
         <div class="col-md-6">
             <button type="submit" class="btn btn-success">บันทึกข้อมูล</button>
         </div>
       </div>
+
+
   </form>
   <br>
 

@@ -45,26 +45,24 @@ class ContentCRUDController extends Controller
         'day'=> 'required',
         'lat'=> 'required',
         'long'=> 'required',
-        'image' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
-        ]);
-
-        $image = time().'.'.$request->image->extension();  
-        $request->image->move(public_path('images'), $image);
-
+        'image' => 'required|image|mimes:jpg,png,jpeg,gif,svg|max:2048',]);
+        
+        $path = $request->file('image')->store('public/images');
         $content = new Content;
         $content ->name = $request->name;
         $content ->detail = $request->detail;
-        $content ->ampher = $request->detail;
+        $content ->ampher = $request->ampher;
         $content ->type = $request->type;
         $content ->people = $request->people;
         $content ->day = $request->day;
         $content ->lat = $request->lat;
         $content ->long = $request->long;
+        $content->image = $path;
 
         $content ->save();
 
         return redirect()->route('contents.index')
-        -> with('success','Content has been created successfully.')->with('image',$imageName);
+        -> with('success','Content has been created successfully.');
     }
 
     /**
@@ -84,16 +82,16 @@ class ContentCRUDController extends Controller
      * @param  \App\content $content
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(Content $content)
     {
         return view('contents.edit',compact('content'));
     }
-
+    
     /**
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\content $content
+     * @param  \App\content  $content
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, $id)
