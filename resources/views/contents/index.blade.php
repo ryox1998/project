@@ -26,7 +26,7 @@
           <div class="member">
             <img  class="page-content" src="{{ Storage::url($content->image) }}" height="154.89px" width="275px"  alt="" />
 
-            <h4>{{$content->name}}</h4>
+            <a href="{{ route('contents.show',$content->id) }}"> <h4> {{$content->name}}</h4></a>
             <span>อำเภอ {{$content->ampher}}</span> <hr> <br>
                 <p class="a">{{$content->detail}}</p>
             <div class="social">

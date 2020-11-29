@@ -10,7 +10,7 @@
     <h2>{{($content->name)}}</h2>
     <h5>อำเภอ {{$content->ampher}}</h5>
   </div>
-  <h5 class="title"> ● รายละเอียด :</h5> <hr>
+  <h5 class="title"> ● รายละเอียด : </h5> <hr>
   <p class="b">
     {{($content->detail)}}
   </p>
