@@ -14,6 +14,7 @@
         "guzzlehttp/guzzle": "^7.0.1",
         "laravel/framework": "^8.12",
         "laravel/tinker": "^2.5",
+        "uxweb/sweet-alert": "^2.0",
         "yajra/laravel-datatables-oracle": "^9.15"
     },
     "require-dev": {

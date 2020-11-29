@@ -46,7 +46,7 @@ class ContentCRUDController extends Controller
         'lat'=> 'required',
         'long'=> 'required',
         'image' => 'required|image|mimes:jpg,png,jpeg,gif,svg|max:2048',]);
-        
+
         $path = $request->file('image')->store('public/images');
         $content = new Content;
         $content ->name = $request->name;
@@ -110,11 +110,12 @@ class ContentCRUDController extends Controller
 
         $content = Content::find($id);
         if ($request->hasFile('image')){
-            $request->validate(['image'=>'required|image|mimes:jpg,png,gif,svg|max:2048',
+            $request->validate(['image' => 'required|image|mimes:jpg,png,jpeg,gif,svg|max:2048',
             ]);
             $path = $request->file('image')->store('public/images');
             $content->image = $path;
         }
+
         $content ->name = $request->name;
         $content ->detail = $request->detail;
         $content ->type = $request->type;
@@ -136,7 +137,7 @@ class ContentCRUDController extends Controller
     public function destroy(Content $content)
     {
         $content->delete();
-    
+
         return redirect()->route('contents.index')
                         ->with('success','Content has been deleted successfully');
     }

@@ -11,7 +11,8 @@
   <!-- Favicons -->
   <link href="{{ asset('assets/img/favicon.png') }}" rel="icon">
   <link href="{{ asset('assets/img/apple-touch-icon.png') }}" rel="apple-touch-icon">
-
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=K2D:wght@100&display=swap" rel="stylesheet">
   <!-- Google Fonts
   <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet"> -->
 
@@ -24,6 +25,10 @@
   <link href="{{asset ('assets/vendor/owl.carousel/assets/owl.carousel.min.css') }}" rel="stylesheet">
 
 
+  <!-- Sweet Alert -->
+<link href="{{ asset('/dist/css/sweetalert.css') }}" rel="stylesheet">
+
+
   <!-- Template Main CSS File -->
   <link href="{{ asset('assets/css/style.css') }}" rel="stylesheet">
 
@@ -34,7 +39,7 @@
   <header id="header" class="fixed-top">
     <div class="container d-flex align-items-center">
 
-      <h1 class="logo mr-auto"> <img src="{{asset('assets/img/logo.png')}}" > <a href="#">TAK Travel</a></h1>
+      <h1 class="logo mr-auto"> <img src="{{asset('assets/img/logo.png')}}" > <a href="{{ route('contents.index')}}">TAK Travel</a></h1>
       <!-- Uncomment below if you prefer to use an image logo -->
       <!-- <a href="index.html" class="logo mr-auto"><img src="assets/img/logo.png" alt="" class="img-fluid"></a> -->
 
@@ -54,10 +59,10 @@
         <div class="container">
           <div class="row">
             <div class="col-lg-6 pt-5 pt-lg-0 order-2 order-lg-1 d-flex flex-column justify-content-center">
-              <h1>Lorem, ipsum dolor.</h1>
-              <h2>Lorem, ipsum dolor sit amet consectetur adipisicing elit.</h2>
+              <h1>(ททท.) สำนักงานตาก</h1>
+              <h2>ท่องเที่ยวตาก Less is more ตากมีมากกว่าที่คิด !!!</h2>
               <div class="d-flex">
-                <a href="#about" class="btn-get-started scrollto">แนะนำสถานที่ท่องเที่ยว</a>
+                <a href="#" class="btn-get-started scrollto">แนะนำสถานที่ท่องเที่ยว</a>
                 <a href="https://youtu.be/AlY5qNYNJdM" class="venobox btn-watch-video " data-vbtype="video" data-autoplay="true"> MV มาเที่ยวตาก <i class="icofont-play-alt-2"></i></a>
               </div>
             </div>
@@ -97,9 +102,11 @@
     <script src="{{ asset('assets/vendor/isotope-layout/isotope.pkgd.min.js') }}"></script>
     <script src="{{ asset('assets/vendor/venobox/venobox.min.js') }}"></script>
     <script src="{{ asset('assets/vendor/owl.carousel/owl.carousel.min.js') }}"></script>
-
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.2/sweetalert.min.js"></script>
     <!-- Template Main JS File -->
-    <script src="assets/js/main.js"></script>
+    <script src="{{asset('assets/js/main.js')}}"></script>
+
+
 
     </body>
     </html>

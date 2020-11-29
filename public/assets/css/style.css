@@ -10,23 +10,13 @@
 # General
 --------------------------------------------------------------*/
 
-@font-face {
-    font-family: RSU_Regular;
-    src: url(font/RSU_Regular.ttf) format("truetype");
-}
-
-@font-face {
-    font-family: RSU_BOLD;
-    src: url(font/RSU_BOLD.ttf) format("truetype");
-}
-
-@font-face {
-    font-family: RSU_light;
-    src: url(font/RSU_light.ttf) format("truetype");
+.myButton {
+    background-color: transparent;
+    border: none;
 }
 
 body {
-    font-family: "RSU_Regular", sans-serif;
+    font-family: 'K2D', sans-serif;
     color: #444444;
 }
 
@@ -45,7 +35,7 @@ h3,
 h4,
 h5,
 h6 {
-    font-family: "RSU_BOLD", sans-serif;
+    font-family: 'K2D', sans-serif;
 }
 
 p.b {
@@ -53,7 +43,6 @@ p.b {
     width: 280px;
     overflow: hidden;
     text-overflow: ellipsis;
-    /* border: 1px solid #000000; */
 }
 
 
@@ -157,7 +146,7 @@ p.b {
     color: #5f687b;
     transition: 0.3s;
     font-size: 14px;
-    font-family: "RSU_BOLD", sans-serif;
+    font-family: 'K2D', sans-serif;
 }
 
 .nav-menu a:hover,
@@ -412,7 +401,7 @@ p.b {
 }
 
 #hero .btn-get-started {
-    font-family: "RSU_Regular", sans-serif;
+    font-family: 'K2D', sans-serif;
     font-weight: 500;
     font-size: 16px;
     letter-spacing: 1px;
@@ -671,7 +660,7 @@ section {
 .counts .counters p {
     padding: 0;
     margin: 0 0 20px 0;
-    font-family: "RSU_Regular", sans-serif;
+    font-family: 'K2D', sans-serif;
     font-size: 14px;
     font-weight: 600;
 }
@@ -925,7 +914,7 @@ section {
 }
 
 .cta .cta-btn {
-    font-family: "RSU_Regular", sans-serif;
+    font-family: 'K2D', sans-serif;
     text-transform: uppercase;
     font-weight: 500;
     font-size: 16px;
@@ -1350,7 +1339,7 @@ section {
     font-weight: 700;
     color: #5f687b;
     position: relative;
-    font-family: "RSU_Regular", sans-serif;
+    font-family: 'K2D', sans-serif;
     padding-bottom: 0;
     margin-bottom: 0;
 }

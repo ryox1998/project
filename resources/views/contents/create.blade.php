@@ -4,20 +4,26 @@
 
 
 @if (session('status'))
-    <div class="alert alert-success mb-1 mt-1">
+
+    <script>
+
+    </script>
+
+
+    {{-- <div class="alert alert-success mb-1 mt-1">
         {{section('status')}}
-    </div>
+    </div> --}}
 @endif
 
 <h1>INSERT DATA</h1>
-
+<hr><br>
 <form action="{{ route('contents.store')}}" method="POST" enctype="multipart/form-data">
     @csrf
     <div class="form-group">
       <label for="name">ชื่อสถานที่ท่องเที่ยว :</label>
       <input type="text" class="form-control" name="name" placeholder="สะพานแขวน 200 ปี">
       @error('name')
-      <div class="alert alert-success mb-1 mt-1">{{$message}}</div>
+      <div class="alert alert-danger mb-1 mt-1">{{$message}}</div>
       @enderror
     </div>
 
@@ -25,7 +31,7 @@
         <label for="detail">รายละเอียด :</label>
         <textarea class="form-control" name="detail" rows="3" placeholder="Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga, assumenda."></textarea>
         @error('detail')
-        <div class="alert alert-success mb-1 mt-1">{{$message}}</div>
+        <div class="alert alert-danger mb-1 mt-1">{{$message}}</div>
         @enderror
       </div>
 
@@ -43,7 +49,7 @@
           <option>วังเจ้า</option>
         </select>
         @error('ampher')
-        <div class="alert alert-success mb-1 mt-1">{{$message}}</div>
+        <div class="alert alert-danger mb-1 mt-1">{{$message}}</div>
         @enderror
       </div>
 
@@ -56,7 +62,7 @@
           <option>ด้านสิ่งที่มนุษย์สร้างขึ้น</option>
         </select>
         @error('type')
-        <div class="alert alert-success mb-1 mt-1">{{$message}}</div>
+        <div class="alert alert-danger mb-1 mt-1">{{$message}}</div>
         @enderror
       </div>
 
@@ -71,7 +77,7 @@
         <option value="5">5 คนขึ้นไป</option>
       </select>
       @error('people')
-      <div class="alert alert-success mb-1 mt-1">{{$message}}</div>
+      <div class="alert alert-danger mb-1 mt-1">{{$message}}</div>
       @enderror
     </div>
 
@@ -85,7 +91,7 @@
           <option value="5">5 วันขึ้นไป</option>
         </select>
         @error('day')
-        <div class="alert alert-success mb-1 mt-1">{{$message}}</div>
+        <div class="alert alert-danger mb-1 mt-1">{{$message}}</div>
         @enderror
       </div>
 
@@ -93,7 +99,7 @@
         <label for="lat">Latitude :</label>
         <input type="text" class="form-control" name="lat" placeholder="16.5239306">
         @error('lat')
-        <div class="alert alert-success mb-1 mt-1">{{$message}}</div>
+        <div class="alert alert-danger mb-1 mt-1">{{$message}}</div>
         @enderror
       </div>
 
@@ -101,7 +107,7 @@
         <label for="long">Longitude :</label>
         <input type="text" class="form-control" name="long" placeholder="97.4941504">
         @error('long')
-        <div class="alert alert-success mb-1 mt-1">{{$message}}</div>
+        <div class="alert alert-danger mb-1 mt-1">{{$message}}</div>
         @enderror
       </div>
 
@@ -110,7 +116,7 @@
         <div class="col-md-6">
             <input type="file" name="image" class="form-control">
             @error('image')
-            <div class="alert alert-success mb-1 mt-1">{{$message}}</div>
+            <div class="alert alert-danger mb-1 mt-1">{{$message}}</div>
             @enderror
         </div>
         <div class="col-md-6">
@@ -118,6 +124,8 @@
         </div>
       </div>
   </form>
-  <br>
+
+  <div class="mt-5"></div>
+
 
 @endsection
