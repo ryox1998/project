@@ -1,5 +1,5 @@
-@extends('layouts.main')
-@section('title','insert')
+@extends('layouts.show')
+@section('title','show')
 @section('content')
 
 <div class="form-group">

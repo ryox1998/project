@@ -8,7 +8,7 @@
 </div>
 @endif
 
-    <a href="{{route('contents.create')}}"> create </a>
+    {{-- <a href="{{route('contents.create')}}"> create </a> --}}
 
     <table class="table">
         <thead>
@@ -49,7 +49,7 @@
                         <a class="btn btn-primary" href="{{ route('contents.edit',$content->id) }}">Edit</a>    </td>
                         @csrf
                         @method('DELETE')
-                        <td>  <button type="submit" class="btn btn-danger">Delete</button> 
+                        <td>  <button type="submit" class="btn btn-danger">Delete</button>
                     </form> </td>
               </tr>
         </tbody>
@@ -73,9 +73,7 @@
             <img src="{{ Storage::url($content->image) }}" height="154.89px" width="275px" alt="" />
             <h4>{{$content->name}}</h4>
             <span>อำเภอ {{$content->ampher}}</span>
-            <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime vitae in fuga culpa. Nihil harum deserunt dolore facere architecto totam!
-            </p>
+                <p class="b">{{$content->detail}}</p>
             <div class="social">
               <a href=""><i class="icofont-twitter"></i></a>
               <a href=""><i class="icofont-facebook"></i></a>
@@ -88,7 +86,7 @@
         </div>
         @endforeach
       </div>
-   
+
 
     </div>
   </section><!-- End Team Section -->

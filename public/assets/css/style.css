@@ -48,6 +48,14 @@ h6 {
     font-family: "RSU_BOLD", sans-serif;
 }
 
+p.b {
+    white-space: nowrap;
+    width: 280px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    /* border: 1px solid #000000; */
+}
+
 
 /*--------------------------------------------------------------
 # Back to top button
