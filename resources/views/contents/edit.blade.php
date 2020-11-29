@@ -120,7 +120,7 @@
       </div>
 
       <div class="form-group mt-5">
-        <img src="{{ Storage::url($content->image) }}" height="200" width="200" alt="" />
+        <img src="{{ Storage::url($content->image) }}" height="30%" width="30%" alt="" />
       </div>
         <div class="col-md-6">
             <button type="submit" class="btn btn-success">บันทึกข้อมูล</button>

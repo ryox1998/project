@@ -6,13 +6,17 @@
     <div class="container">
         <div align="center"> <img src="{{ Storage::url($content->image) }}" height="100%" width="100%" alt="" /></div>
     </div>
-<div class="section-title ">
-    <h2>{{($content->name)}}</h2> <hr>
+  <div class="section-title ">
+    <h2>{{($content->name)}}</h2>
     <h5>อำเภอ {{$content->ampher}}</h5>
-    <p>
-    {{($content->detail)}}
-    </p>
   </div>
+  <h5 class="title"> ● รายละเอียด :</h5> <hr>
+  <p class="b">
+    {{($content->detail)}}
+  </p>
 </section>
+
+
+
 
 @endsection

@@ -27,8 +27,8 @@
             <img  class="page-content" src="{{ Storage::url($content->image) }}" height="154.89px" width="275px"  alt="" />
 
             <h4>{{$content->name}}</h4>
-            <span>อำเภอ {{$content->ampher}}</span>
-                <p class="b">{{$content->detail}}</p>
+            <span>อำเภอ {{$content->ampher}}</span> <hr> <br>
+                <p class="a">{{$content->detail}}</p>
             <div class="social">
               <a href=""><i class="icofont-twitter"></i></a>
               <a href=""><i class="icofont-facebook"></i></a>

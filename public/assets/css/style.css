@@ -38,11 +38,19 @@ h6 {
     font-family: 'K2D', sans-serif;
 }
 
+p.a {
+    display: -webkit-box;
+    -webkit-line-clamp: 4;
+    -webkit-box-orient: vertical;
+    overflow: hidden
+}
+
 p.b {
-    white-space: nowrap;
-    width: 280px;
-    overflow: hidden;
-    text-overflow: ellipsis;
+    margin-left: 15px;
+}
+
+h5.title {
+    margin-left: 15px;
 }
 
 
