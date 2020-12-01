@@ -41,7 +41,7 @@
                 <a href="{{ route('contents.edit',$content->id) }}"><img src="{{asset('assets/img/edit.svg')}}" alt="" height="30px" width="30px"></a>
                 @csrf
                 @method('DELETE')
-            <button class="myButton"> <img src="{{asset('assets/img/delete.svg')}}" alt="" height="30px" width="30px"></button>
+            <button onclick="return confirm('คุณต้องการลบ ใช่ หรือ ไม่')" class="myButton"> <img src="{{asset('assets/img/delete.svg')}}" alt="" height="30px" width="30px"></button>
             </form>
           </div>
         </div>
@@ -51,6 +51,7 @@
     </div>
   </section><!-- End Team Section -->
 
-  <div class="mt-5"></div>
+
   {!! $contents->links() !!}
+
 @endsection

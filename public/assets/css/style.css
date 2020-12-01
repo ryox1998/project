@@ -13,7 +13,13 @@
 .myButton {
     background-color: transparent;
     border: none;
+    outline: none;
 }
+
+.myButton:focus {
+    outline: none;
+}
+
 
 body {
     font-family: 'K2D', sans-serif;

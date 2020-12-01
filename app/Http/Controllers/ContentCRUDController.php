@@ -13,7 +13,7 @@ class ContentCRUDController extends Controller
      */
     public function index()
     {
-        $data['contents'] = Content::orderBy('id','desc')->paginate(5);
+        $data['contents'] = Content::orderBy('id','desc')->paginate(6);
         return view('contents.index',$data);
     }
 
@@ -137,7 +137,6 @@ class ContentCRUDController extends Controller
     public function destroy(Content $content)
     {
         $content->delete();
-
         return redirect()->route('contents.index')
                         ->with('success','Content has been deleted successfully');
     }
