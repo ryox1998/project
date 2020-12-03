@@ -61,7 +61,7 @@
           <div class="row">
             <div class="col-lg-6 pt-5 pt-lg-0 order-2 order-lg-1 d-flex flex-column justify-content-center">
               <h1>(ททท.) สำนักงานตาก</h1>
-              <h2>ท่องเที่ยวตาก Less is more ตากมีมากกว่าที่คิด !!!</h2>
+              <h2>มา Cool มาคุย มาลุย มาเท่ แล้วก็มาเปย์กันที่..ตาก</h2>
               <div class="d-flex">
                 <a href="#" class="btn-get-started scrollto">แนะนำสถานที่ท่องเที่ยว</a>
                 <a href="https://youtu.be/AlY5qNYNJdM" class="venobox btn-watch-video " data-vbtype="video" data-autoplay="true"> MV มาเที่ยวตาก <i class="icofont-play-alt-2"></i></a>

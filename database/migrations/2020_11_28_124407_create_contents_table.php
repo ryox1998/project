@@ -12,6 +12,7 @@ class CreateContentsTable extends Migration
      * @return void
      */
     public function up()
+
     {
         Schema::create('contents', function (Blueprint $table) {
             $table->id();
@@ -21,10 +22,16 @@ class CreateContentsTable extends Migration
             $table->string('type');
             $table->string('people');
             $table->string('day');
-            $table->double('lat');
-            $table->double('long');
+            $table->string('lat');
+            $table->string('long');
             $table->string('image');
             $table->timestamps();
+        });
+
+
+        Schema::create('images', function (Blueprint $table) {
+            $table->id('image_id');
+            $table->string('image_name');
         });
     }
 
