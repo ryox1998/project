@@ -54,7 +54,7 @@
       </div>
 
 
-      <div class="form-group">
+      {{-- <div class="form-group">
         <label for="type">รูปแบบการท่องเที่ยว :</label>
         <select class="form-control" name="type">
           <option>ด้านธรรมชาติ</option>
@@ -64,17 +64,40 @@
         @error('type')
         <div class="alert alert-danger mb-1 mt-1">{{$message}}</div>
         @enderror
-      </div>
+      </div> --}}
+
+      
+      <p class="form-group">รูปแบบการท่องเที่ยว :</p>
+      <div class="col-sm-6 pl-5">
+          <input class="form-check-input" type="checkbox"  name="type" value="ด้านธรรมชาติ">
+          <label class="form-check-label" for="inlineCheckbox1">ด้านธรรมชาติ</label>
+        </div>
+
+        <div class="col-sm-6 pl-5">
+          <input class="form-check-input" type="checkbox" name="type" value="ด้านวัฒนธรรมประเพณีวิถีชีวิต">
+          <label class="form-check-label" for="inlineCheckbox2">ด้านวัฒนธรรมประเพณีวิถีชีวิต</label>
+        </div>
+
+        <div class="col-sm-6 pl-5">
+          <input class="form-check-input" type="checkbox" name="type" value="ด้านสิ่งที่มนุษย์สร้างขึ้น">
+          <label class="form-check-label" for="inlineCheckbox3">ด้านสิ่งที่มนุษย์สร้างขึ้น</label>
+        </div>
+        <div>
+          @error('type')
+          <div class="alert alert-danger mb-1 mt-1">{{$message}}</div>
+          @enderror
+        </div>
+
+        
 
 
-    <div class="form-group">
+    <div class="form-group mt-4">
       <label for="people">จำนวนนักท่องเที่ยวที่แนะนำ :</label>
       <select class="form-control" name="people">
-        <option value="1">1 คน</option>
-        <option value="2">2 คน</option>
-        <option value="3">3 คน</option>
-        <option value="4">4 คน</option>
-        <option value="5">5 คนขึ้นไป</option>
+        <option value="เที่ยวเดี่ยว">เที่ยวเดี่ยว</option>
+        <option value="เที่ยวแบบคู่">เที่ยวแบบคู่</option>
+        <option value="เที่ยวแบบกลุ่ม">เที่ยวแบบกลุ่ม</option>
+        <option value="เที่ยวแบบหมู่คณะ">เที่ยวแบบหมู่คณะ</option>
       </select>
       @error('people')
       <div class="alert alert-danger mb-1 mt-1">{{$message}}</div>
@@ -113,13 +136,13 @@
 
        {{-- form image --}}
       <div class="row">
-        <div class="col-md-6">
+        <div class="col-md-6 mt-3">
             <input type="file" name="image" class="form-control">
             @error('image')
             <div class="alert alert-danger mb-1 mt-1">{{$message}}</div>
             @enderror
         </div>
-        <div class="col-md-6">
+        <div class="col-md-6 mt-3">
             <button type="submit" class="btn btn-success">บันทึกข้อมูล</button>
         </div>
       </div>

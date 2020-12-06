@@ -44,11 +44,31 @@
       <nav class="nav-menu d-none d-lg-block">
         <ul>
           <li class="active"><a href="{{ route('contents.index')}}">หน้าแรก</a></li>
-          <li><a href="{{route('contents.create')}}">เพิ่มข้อมูล</a></li>
+          <li><a href="{{route('guide.create')}}">แนะนำสถานที่ท่องเที่ยว</a></li>
+          <li class="drop-down"><a href="#">อำเภอ</a>
+            <ul>
+              <li><a href="{{ url('ampher/mueang_tak')}}">เมืองตาก</a></li>
+              <li><a href="{{ url('ampher/ban_tak')}}">บ้านตาก</a></li>
+              <li><a href="{{ url('ampher/sam_ngao')}}">สามเงา</a></li>
+              <li><a href="{{ url('ampher/measot')}}">แม่สอด</a></li>
+              <li><a href="{{ url('ampher/mae_ramat')}}">แม่ระมาด</a></li>
+              <li><a href="{{ url('ampher/tha_song_yang')}}">ท่าสองยาง</a></li>
+              <li><a href="{{ url('ampher/phop_phra')}}">พบพระ</a></li>
+              <li><a href="{{ url('ampher/um_phang')}}">อุ้มผาง</a></li>
+              <li><a href="{{ url('ampher/wang_chao')}}">วังเจ้า</a></li>
+            </ul>
+          </li>
+          
+          
+
+          <li class="drop-down"><a href="#">เจ้าหน้าที่</a>
+            <ul>
+              <li><a href="{{route('contents.create')}}">เพิ่มข้อมูล</a></li>
+            </ul>
+          </li>
 
         </ul>
       </nav><!-- .nav-menu -->
-      <a href="#"  class="get-started-btn scrollto">แนะนำสถานที่ท่องเที่ยว</a>
     </div>
   </header><!-- End Header -->
 

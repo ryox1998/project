@@ -13,7 +13,7 @@ class ContentCRUDController extends Controller
      */
     public function index()
     {
-        $data['contents'] = Content::orderBy('id','desc')->paginate(6);
+        $data['contents'] = Content::orderBy('id','desc')->simplePaginate(3);
         return view('contents.index',$data);
     }
 
@@ -45,7 +45,18 @@ class ContentCRUDController extends Controller
         'day'=> 'required',
         'lat'=> 'required',
         'long'=> 'required',
-        'image' => 'required|image|mimes:jpg,png,jpeg,gif,svg|max:2048',]);
+        'image' => 'required|image|mimes:jpg,png,jpeg,gif,svg|max:2048',],
+
+        [
+            'name.required' => 'กรุณาใส่ชื่อสถานที่ด้วยครับ' ,
+            'detail.required'=> 'กรุณาใส่รายละเอียด',
+            'type.required' => 'กรุณาเลือกรูปแบบการท่องเที่ยว',
+            'lat.required' => 'กรุณาระบุ Lat',
+            'long.required' => 'กรุณาระบุ Long',
+            'image.required' => 'กรุณาเลือกรูปภาพด้วยครับ',
+        ]
+    
+    );
 
         $path = $request->file('image')->store('public/images');
         $content = new Content;
@@ -76,6 +87,7 @@ class ContentCRUDController extends Controller
         return view('contents.show',compact('content'));
     }
 
+
     /**
      * Show the form for editing the specified resource.
      *
@@ -105,7 +117,16 @@ class ContentCRUDController extends Controller
         'people'=> 'required',
         'day'=> 'required',
         'lat'=> 'required',
-        'long'=> 'required',]);
+        'long'=> 'required',] , 
+        
+        [
+            'name.required' => 'กรุณาใส่ชื่อสถานที่ด้วยครับ' ,
+            'detail.required'=> 'กรุณาใส่รายละเอียด',
+            'type.required' => 'กรุณาเลือกรูปแบบการท่องเที่ยว',
+            'lat.required' => 'กรุณาระบุ Lat',
+            'long.required' => 'กรุณาระบุ Long',
+            'image.required' => 'กรุณาเลือกรูปภาพด้วยครับ',
+        ]);
 
 
         $content = Content::find($id);
@@ -140,4 +161,6 @@ class ContentCRUDController extends Controller
         return redirect()->route('contents.index')
                         ->with('success','Content has been deleted successfully');
     }
+    
 }
+

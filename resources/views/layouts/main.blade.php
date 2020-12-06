@@ -13,7 +13,7 @@
   <link href="{{ asset('assets/img/apple-touch-icon.png') }}" rel="apple-touch-icon">
   <link rel="preconnect" href="https://fonts.gstatic.com">
   <link rel="preconnect" href="https://fonts.gstatic.com">
-<link href="https://fonts.googleapis.com/css2?family=K2D:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=K2D:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800&display=swap" rel="stylesheet">
   <!-- Google Fonts
   <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet"> -->
 
@@ -47,11 +47,29 @@
       <nav class="nav-menu d-none d-lg-block">
         <ul>
           <li class="active"><a href="{{ route('contents.index')}}">หน้าแรก</a></li>
-          <li><a href="{{route('contents.create')}}">เพิ่มข้อมูล</a></li>
+          <li><a href="{{route('guide.create')}}">แนะนำสถานที่ท่องเที่ยว</a></li>
+          <li class="drop-down"><a href="#">อำเภอ</a>
+            <ul>
+              <li><a href="{{ url('ampher/mueang_tak')}}">เมืองตาก</a></li>
+              <li><a href="{{ url('ampher/ban_tak')}}">บ้านตาก</a></li>
+              <li><a href="{{ url('ampher/sam_ngao')}}">สามเงา</a></li>
+              <li><a href="{{ url('ampher/measot')}}">แม่สอด</a></li>
+              <li><a href="{{ url('ampher/mae_ramat')}}">แม่ระมาด</a></li>
+              <li><a href="{{ url('ampher/tha_song_yang')}}">ท่าสองยาง</a></li>
+              <li><a href="{{ url('ampher/phop_phra')}}">พบพระ</a></li>
+              <li><a href="{{ url('ampher/um_phang')}}">อุ้มผาง</a></li>
+              <li><a href="{{ url('ampher/wang_chao')}}">วังเจ้า</a></li>
+            </ul>
+          </li>
+          <li class="drop-down"><a href="#">เจ้าหน้าที่</a>
+            <ul>
+              <li><a href="{{route('contents.create')}}">เพิ่มข้อมูล</a></li>
+            </ul>
+          </li>
 
         </ul>
       </nav><!-- .nav-menu -->
-      <a href="#"  class="get-started-btn scrollto">แนะนำสถานที่ท่องเที่ยว</a>
+      
     </div>
   </header><!-- End Header -->
 
@@ -63,7 +81,7 @@
               <h1>(ททท.) สำนักงานตาก</h1>
               <h2>มา Cool มาคุย มาลุย มาเท่ แล้วก็มาเปย์กันที่..ตาก</h2>
               <div class="d-flex">
-                <a href="#" class="btn-get-started scrollto">แนะนำสถานที่ท่องเที่ยว</a>
+                <a href="{{route('guide.create')}}" class="btn-get-started scrollto">แนะนำสถานที่ท่องเที่ยว</a>
                 <a href="https://youtu.be/AlY5qNYNJdM" class="venobox btn-watch-video " data-vbtype="video" data-autoplay="true"> MV มาเที่ยวตาก <i class="icofont-play-alt-2"></i></a>
               </div>
             </div>

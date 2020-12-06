@@ -14,7 +14,9 @@
   <p class="b">
     {{($content->detail)}}
   </p>
+
 </section>
+<h6 class="pl-3"> Tag : {{$content->people}} , {{$content->type}} </h6>
 
 
 
