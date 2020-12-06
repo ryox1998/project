@@ -26,12 +26,18 @@
   <link href="{{asset ('assets/vendor/owl.carousel/assets/owl.carousel.min.css') }}" rel="stylesheet">
 
 
+
   <!-- Sweet Alert -->
 <link href="{{ asset('/dist/css/sweetalert.css') }}" rel="stylesheet">
 
 
   <!-- Template Main CSS File -->
   <link href="{{ asset('assets/css/style.css') }}" rel="stylesheet">
+
+
+  <script defer
+  src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA5jDH1BL6_WnRSTJHx8BvJBr7V3YiHlT0&callback=initMap">
+</script>
 
 </head>
 <body >
