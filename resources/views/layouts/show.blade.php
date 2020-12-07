@@ -64,8 +64,6 @@
             </ul>
           </li>
           
-          
-
           <li class="drop-down"><a href="#">เจ้าหน้าที่</a>
             <ul>
               <li><a href="{{route('contents.create')}}">เพิ่มข้อมูล</a></li>
