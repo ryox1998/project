@@ -55,7 +55,7 @@ p.a {
     display: -webkit-box;
     -webkit-line-clamp: 4;
     -webkit-box-orient: vertical;
-    overflow: hidden
+     overflow: hidden
 }
 
 p.b {

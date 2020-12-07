@@ -75,11 +75,15 @@
     </div>
   </header><!-- End Header -->
 
+
     <div class="container">
 
   @yield('content')
 
     </div>
+
+    <div class="mt-5"></div>
+
 
    <!-- ======= Footer ======= -->
  <footer id="footer">

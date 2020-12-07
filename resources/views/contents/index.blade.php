@@ -28,7 +28,7 @@
 
             <a href="{{ route('contents.show',$content->id) }}"> <h4> {{$content->name}}</h4></a>
             <span>อำเภอ {{$content->ampher}}</span> <hr> <br>
-                <p class="a">{{$content->detail}}</p>
+                <p class="text-justify a">{{$content->detail}}</p>
             <div class="social">
               <a href=""><i class="icofont-twitter"></i></a>
               <a href=""><i class="icofont-facebook"></i></a>
