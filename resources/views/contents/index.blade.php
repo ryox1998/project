@@ -1,5 +1,5 @@
 @extends('layouts.main')
-@section('title','home')
+@section('title','TAK Travel')
 @section('content')
 
 @if ($message = Session::get('success'))

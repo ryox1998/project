@@ -1,5 +1,5 @@
 @extends('layouts.show')
-@section('title','show')
+@section('title','Show')
 @section('content')
 
 <script>
@@ -29,7 +29,7 @@
     <h5>อำเภอ {{$content->ampher}}</h5>
   </div>
   <h5 class="title"> ● รายละเอียด : </h5> <hr>
-  <p class="b">
+  <p class="text-justify b">
     {{($content->detail)}}
   </p>
 
