@@ -21,7 +21,7 @@
     @csrf
     <div class="form-group">
       <label for="name">ชื่อสถานที่ท่องเที่ยว :</label>
-      <input type="text" class="form-control" name="name" placeholder="สะพานแขวน 200 ปี">
+      <input type="text" class="form-control" name="name" placeholder="Attraction name">
       @error('name')
       <div class="alert alert-danger mb-1 mt-1">{{$message}}</div>
       @enderror

@@ -36,6 +36,6 @@
   <!--The div element for the map -->
   <div id="map"></div>
 </section>
-<h6 class="pl-3"> Tag : {{$content->people}} , {{$content->type}} </h6>
+<h6 class="mt-3"> Tag : {{$content->people}} , {{$content->type}} </h6>
 
 @endsection
