@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 use App\Models\Content;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Session;
-
+use App\Http\Controllers\ContentCRUDController;
 class GuideController extends Controller
 {
     /**
@@ -14,8 +14,9 @@ class GuideController extends Controller
      */
     public function index()
     {
-        $data['contents'] = Content::orderBy('id','desc')->simplePaginate(3);
-        return view('contents.index',$data);
+            
+            $data['contents'] = Content::orderBy('id','desc');
+            return view('guide.show',$data);
     }
 
     /**
@@ -36,14 +37,15 @@ class GuideController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
+
     {   
 
         if($request->isMethod('post')) {
         \Session::put('user', $request->all());
-        }
+        } 
 
-        $user = $request->session()->all();
-        return dd ($user);
+        $user = $request->session()->get('user');
+        return redirect()->route('guide.index');
 
     }
 

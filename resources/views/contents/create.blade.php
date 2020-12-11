@@ -3,17 +3,6 @@
 @section('content')
 
 
-@if (session('status'))
-
-    <script>
-
-    </script>
-
-
-    {{-- <div class="alert alert-success mb-1 mt-1">
-        {{section('status')}}
-    </div> --}}
-@endif
 
 <h1>INSERT DATA</h1>
 <hr><br>

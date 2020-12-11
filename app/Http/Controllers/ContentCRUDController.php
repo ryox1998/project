@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 use App\Models\Content;
 use Illuminate\Http\Request;
+use App\Http\Controllers\GuideController;
 
 class ContentCRUDController extends Controller
 {

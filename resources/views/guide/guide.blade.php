@@ -43,11 +43,11 @@
                 <br>
                 <label for="use_day">ระยะเวลาในการเที่ยว</label>
                 <select class="form-control" name="use_day">
-                  <option value="1วัน">1 วัน</option>
-                  <option value="2วัน">2 วัน</option>
-                  <option value="3วัน">3 วัน</option>
-                  <option value="4วัน">4 วัน</option>
-                  <option value="5วัน">5 วันขึ้นไป</option>
+                  <option value="1">1 วัน</option>
+                  <option value="2">2 วัน</option>
+                  <option value="3">3 วัน</option>
+                  <option value="4">4 วัน</option>
+                  <option value="5">5 วันขึ้นไป</option>
                 </select>
                 </div>
         
