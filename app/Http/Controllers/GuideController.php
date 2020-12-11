@@ -14,7 +14,8 @@ class GuideController extends Controller
      */
     public function index()
     {
-    
+        $data['contents'] = Content::orderBy('id','desc')->simplePaginate(3);
+        return view('contents.index',$data);
     }
 
     /**
@@ -35,8 +36,15 @@ class GuideController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
-    {
-        
+    {   
+
+        if($request->isMethod('post')) {
+        \Session::put('user', $request->all());
+        }
+
+        $user = $request->session()->all();
+        return dd ($user);
+
     }
 
     /**
