@@ -14,7 +14,8 @@ class GuideController extends Controller
     public function index(Request $request)
     {
         $use_people = $request->session()->get('use_people');
-        return dd($use_people);
+        $data['contents'] = Content::orderBy('id','desc')->paginate(6);
+        return view('guide.show',$data,['use_people'=>$use_people]);
     }
     /**
      * Show the form for creating a new resource.
@@ -25,7 +26,6 @@ class GuideController extends Controller
     {
         return view ('guide.guide');
     }
-
     /**
      * Store a newly created resource in storage.
      *
@@ -33,7 +33,6 @@ class GuideController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
-
     {
         if($request->isMethod('post')) {
             $use_people = $request->get('use_people');
@@ -42,13 +41,13 @@ class GuideController extends Controller
             // $request->session()->put('use_day', 'use_day');
             // $request->session()->put('use_km', 'use_type');
         }
+
+
         // $use_type = $request->get('use_type');
         // $use_day = $request->get('use_day');
         // $use_km = $request->get('use_km');
         return redirect()->route('guide.index');
         // return dd($use_people);
-
-
     }
 
     /**

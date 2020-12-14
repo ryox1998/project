@@ -13,8 +13,6 @@ class AmpherController extends Controller
         return view('ampher.mueang_tak',$data);
     }
 
-
-
     public function ban_tak () {
 
         $data['contents'] = Content::orderBy('id','desc')->paginate(6);
