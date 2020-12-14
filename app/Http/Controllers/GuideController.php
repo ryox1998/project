@@ -4,7 +4,6 @@ namespace App\Http\Controllers;
 use App\Models\Content;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Session;
-use App\Http\Controllers\ContentCRUDController;
 class GuideController extends Controller
 {
     /**
@@ -12,13 +11,11 @@ class GuideController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
-            
-            $data['contents'] = Content::orderBy('id','desc');
-            return view('guide.show',$data);
+        $use_people = $request->session()->get('use_people');
+        return dd($use_people);
     }
-
     /**
      * Show the form for creating a new resource.
      *
@@ -26,7 +23,6 @@ class GuideController extends Controller
      */
     public function create()
     {
-
         return view ('guide.guide');
     }
 
@@ -38,14 +34,20 @@ class GuideController extends Controller
      */
     public function store(Request $request)
 
-    {   
-
+    {
         if($request->isMethod('post')) {
-        \Session::put('user', $request->all());
-        } 
-
-        $user = $request->session()->get('user');
+            $use_people = $request->get('use_people');
+            $request->session()->put('use_people', $use_people);
+            // $request->session()->put('use_type', 'use_type');
+            // $request->session()->put('use_day', 'use_day');
+            // $request->session()->put('use_km', 'use_type');
+        }
+        // $use_type = $request->get('use_type');
+        // $use_day = $request->get('use_day');
+        // $use_km = $request->get('use_km');
         return redirect()->route('guide.index');
+        // return dd($use_people);
+
 
     }
 
@@ -55,9 +57,9 @@ class GuideController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(Request $request,$id)
     {
-        //
+
     }
 
     /**
