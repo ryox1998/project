@@ -27,15 +27,15 @@
       <div class="form-group">
         <label for="ampher">อำเภอ :</label>
         <select class="form-control" name="ampher">
-          <option>เมืองตาก</option>
-          <option>บ้านตาก</option>
-          <option>สามเงา</option>
-          <option>แม่สอด</option>
-          <option>แม่ระมาด</option>
-          <option>ท่าสองยาง</option>
-          <option>พบพระ</option>
-          <option>อุ้มผาง</option>
-          <option>วังเจ้า</option>
+          <option value="เมืองตาก">เมืองตาก</option>
+          <option value="บ้านตาก">บ้านตาก</option>
+          <option value="สามเงา">สามเงา</option>
+          <option value="แม่สอด">แม่สอด</option>
+          <option value="แม่ระมาด">แม่ระมาด</option>
+          <option value="ท่าสองยาง">ท่าสองยาง</option>
+          <option value="พบพระ">พบพระ</option>
+          <option value="อุ้มผาง">อุ้มผาง</option>
+          <option value="วังเจ้า">วังเจ้า</option>
         </select>
         @error('ampher')
         <div class="alert alert-danger mb-1 mt-1">{{$message}}</div>
@@ -43,34 +43,23 @@
       </div>
 
 
-      {{-- <div class="form-group">
-        <label for="type">รูปแบบการท่องเที่ยว :</label>
-        <select class="form-control" name="type">
-          <option>ด้านธรรมชาติ</option>
-          <option>ด้านวัฒนธรรมประเพณีวิถีชีวิต</option>
-          <option>ด้านสิ่งที่มนุษย์สร้างขึ้น</option>
-        </select>
-        @error('type')
-        <div class="alert alert-danger mb-1 mt-1">{{$message}}</div>
-        @enderror
-      </div> --}}
 
-      
       <p class="form-group">รูปแบบการท่องเที่ยว :</p>
       <div class="col-sm-6 pl-5">
-          <input class="form-check-input" type="checkbox"  name="type" value="ด้านธรรมชาติ">
-          <label class="form-check-label" for="inlineCheckbox1">ด้านธรรมชาติ</label>
-        </div>
+          <input class="form-check-input" type="checkbox"  name="type[]" value="ด้านธรรมชาติ">
+          <label class="form-check-label" >ด้านธรรมชาติ</label>
+      </div>
 
-        <div class="col-sm-6 pl-5">
-          <input class="form-check-input" type="checkbox" name="type" value="ด้านวัฒนธรรมประเพณีวิถีชีวิต">
-          <label class="form-check-label" for="inlineCheckbox2">ด้านวัฒนธรรมประเพณีวิถีชีวิต</label>
-        </div>
+      <div class="col-sm-6 pl-5">
+          <input class="form-check-input" type="checkbox" name="type[]" value="ด้านวัฒนธรรมประเพณีวิถีชีวิต">
+          <label class="form-check-label" >ด้านวัฒนธรรมประเพณีวิถีชีวิต</label>
+      </div>
 
-        <div class="col-sm-6 pl-5">
-          <input class="form-check-input" type="checkbox" name="type" value="ด้านสิ่งที่มนุษย์สร้างขึ้น">
-          <label class="form-check-label" for="inlineCheckbox3">ด้านสิ่งที่มนุษย์สร้างขึ้น</label>
-        </div>
+      <div class="col-sm-6 pl-5">
+          <input class="form-check-input" type="checkbox" name="type[]" value="ด้านสิ่งที่มนุษย์สร้างขึ้น">
+          <label class="form-check-label" >ด้านสิ่งที่มนุษย์สร้างขึ้น</label>
+      </div>
+
         <div>
           @error('type')
           <div class="alert alert-danger mb-1 mt-1">{{$message}}</div>
@@ -96,11 +85,11 @@
     <div class="form-group">
         <label for="day">จำนวนวันที่ใช้ในการเที่ยวที่แนะนำ :</label>
         <select class="form-control" name="day">
-          <option value="1">1 วัน</option>
-          <option value="2">2 วัน</option>
-          <option value="3">3 วัน</option>
-          <option value="4">4 วัน</option>
-          <option value="5">5 วันขึ้นไป</option>
+          <option value="1 วัน">1 วัน</option>
+          <option value="2 วัน">2 วัน</option>
+          <option value="3 วัน">3 วัน</option>
+          <option value="4 วัน">4 วัน</option>
+          <option value="5 วัน">5 วันขึ้นไป</option>
         </select>
         @error('day')
         <div class="alert alert-danger mb-1 mt-1">{{$message}}</div>

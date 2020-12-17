@@ -14,8 +14,9 @@ class ContentCRUDController extends Controller
      */
     public function index()
     {
-        $data['contents'] = Content::orderBy('id','desc')->simplePaginate(3);
-        return view('contents.index',$data);
+
+    $data['contents'] = Content::orderBy('id','desc')->simplePaginate(3);
+    return view('contents.index',$data);
     }
 
     /**
@@ -64,7 +65,8 @@ class ContentCRUDController extends Controller
         $content ->name = $request->name;
         $content ->detail = $request->detail;
         $content ->ampher = $request->ampher;
-        $content ->type = $request->type;
+        $content['type'] = $request->input('type');
+        // $content ->type = $request->type;
         $content ->people = $request->people;
         $content ->day = $request->day;
         $content ->lat = $request->lat;
@@ -140,7 +142,8 @@ class ContentCRUDController extends Controller
 
         $content ->name = $request->name;
         $content ->detail = $request->detail;
-        $content ->type = $request->type;
+        // $content ->type = $request->type;
+        $content['type'] = $request->input('type');
         $content ->people = $request->people;
         $content ->day = $request->day;
         $content ->lat = $request->lat;

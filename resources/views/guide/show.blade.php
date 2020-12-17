@@ -8,11 +8,13 @@
     <div class="container">
 
       <div class="section-title">
+        
         <span>สะถานท่องเที่ยวที่แนะนำ</span>
         <h2>สะถานท่องเที่ยวที่แนะนำ</h2>
         <p>
             ตาก..เที่ยวได้ทุกวัน ตาก..เที่ยวได้ทุกที่ ตาก..เที่ยวได้ทุกฤดู !!
         </p>
+
       </div>
       <div class="row">
         @foreach ($contents as $content)

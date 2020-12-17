@@ -19,7 +19,7 @@ class CreateContentsTable extends Migration
             $table->id();
             $table->string('name');
             $table->text('detail');
-            $table->string('type');
+            $table->text('type');
             $table->string('ampher');
             $table->string('people');
             $table->string('day');
