@@ -5,6 +5,8 @@ use App\Models\Content;
 use Illuminate\Http\Request;
 use App\Http\Controllers\GuideController;
 
+use function PHPSTORM_META\type;
+
 class ContentCRUDController extends Controller
 {
     /**
@@ -57,7 +59,7 @@ class ContentCRUDController extends Controller
             'long.required' => 'กรุณาระบุ Long',
             'image.required' => 'กรุณาเลือกรูปภาพด้วยครับ',
         ]
-    
+
     );
 
         $path = $request->file('image')->store('public/images');
@@ -65,7 +67,8 @@ class ContentCRUDController extends Controller
         $content ->name = $request->name;
         $content ->detail = $request->detail;
         $content ->ampher = $request->ampher;
-        $content['type'] = $request->input('type');
+        $content ->type = implode(",",$request->type);
+        // $content['type'] = $request->input('type');
         // $content ->type = $request->type;
         $content ->people = $request->people;
         $content ->day = $request->day;
@@ -78,6 +81,7 @@ class ContentCRUDController extends Controller
         return redirect()->route('contents.index')
         -> with('success','Content has been created successfully.');
     }
+
 
     /**
      * Display the specified resource.
@@ -93,13 +97,14 @@ class ContentCRUDController extends Controller
 
     /**
      * Show the form for editing the specified resource.
-     *
      * @param  \App\content $content
      * @return \Illuminate\Http\Response
      */
     public function edit(Content $content)
     {
+
         return view('contents.edit',compact('content'));
+
     }
 
     /**
@@ -120,8 +125,8 @@ class ContentCRUDController extends Controller
         'people'=> 'required',
         'day'=> 'required',
         'lat'=> 'required',
-        'long'=> 'required',] , 
-        
+        'long'=> 'required',] ,
+
         [
             'name.required' => 'กรุณาใส่ชื่อสถานที่ด้วยครับ' ,
             'detail.required'=> 'กรุณาใส่รายละเอียด',
@@ -133,6 +138,7 @@ class ContentCRUDController extends Controller
 
 
         $content = Content::find($id);
+
         if ($request->hasFile('image')){
             $request->validate(['image' => 'required|image|mimes:jpg,png,jpeg,gif,svg|max:2048',
             ]);
@@ -143,7 +149,8 @@ class ContentCRUDController extends Controller
         $content ->name = $request->name;
         $content ->detail = $request->detail;
         // $content ->type = $request->type;
-        $content['type'] = $request->input('type');
+        // $content['type'] = $request->input('type');
+        $content ->type = implode(",",$request->type);
         $content ->people = $request->people;
         $content ->day = $request->day;
         $content ->lat = $request->lat;
@@ -165,6 +172,6 @@ class ContentCRUDController extends Controller
         return redirect()->route('contents.index')
                         ->with('success','Content has been deleted successfully');
     }
-    
+
 }
 

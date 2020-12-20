@@ -10,7 +10,7 @@
     @csrf
     <div class="form-group">
       <label for="name">ชื่อสถานที่ท่องเที่ยว :</label>
-      <input type="text" class="form-control" name="name" placeholder="Attraction name">
+      <input type="text" class="form-control" name="name" placeholder="กรอก ชื่อสถานที่">
       @error('name')
       <div class="alert alert-danger mb-1 mt-1">{{$message}}</div>
       @enderror
@@ -18,7 +18,7 @@
 
     <div class="form-group">
         <label for="detail">รายละเอียด :</label>
-        <textarea class="form-control" name="detail" rows="3" placeholder="Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga, assumenda."></textarea>
+        <textarea class="form-control" name="detail" rows="3" placeholder="กรอก รายละเอียด"></textarea>
         @error('detail')
         <div class="alert alert-danger mb-1 mt-1">{{$message}}</div>
         @enderror
@@ -66,7 +66,7 @@
           @enderror
         </div>
 
-        
+
 
 
     <div class="form-group mt-4">
@@ -97,16 +97,16 @@
       </div>
 
       <div class="form-group">
-        <label for="lat">Latitude :</label>
-        <input type="text" class="form-control" name="lat" placeholder="16.5239306">
+        <label for="lat">ละติจูด (Latitude) :</label>
+        <input type="text" class="form-control" name="lat" placeholder="เลขทศนิยม">
         @error('lat')
         <div class="alert alert-danger mb-1 mt-1">{{$message}}</div>
         @enderror
       </div>
 
       <div class="form-group">
-        <label for="long">Longitude :</label>
-        <input type="text" class="form-control" name="long" placeholder="97.4941504">
+        <label for="long">ลองจิจูด (Longitude) :</label>
+        <input type="text" class="form-control" name="long" placeholder="เลขทศนิยม">
         @error('long')
         <div class="alert alert-danger mb-1 mt-1">{{$message}}</div>
         @enderror
