@@ -67,8 +67,8 @@ class ContentCRUDController extends Controller
         $content ->name = $request->name;
         $content ->detail = $request->detail;
         $content ->ampher = $request->ampher;
-        $content ->type = implode(",",$request->type);
-        // $content['type'] = $request->input('type');
+        // $content ->type = implode(",",$request->type);
+        $content['type'] = $request->input('type');
         // $content ->type = $request->type;
         $content ->people = $request->people;
         $content ->day = $request->day;
@@ -104,6 +104,8 @@ class ContentCRUDController extends Controller
     {
 
         return view('contents.edit',compact('content'));
+
+        // return dd($content->type);
 
     }
 
@@ -149,8 +151,8 @@ class ContentCRUDController extends Controller
         $content ->name = $request->name;
         $content ->detail = $request->detail;
         // $content ->type = $request->type;
-        // $content['type'] = $request->input('type');
-        $content ->type = implode(",",$request->type);
+        $content['type'] = $request->input('type');
+        // $content ->type = implode(",",$request->type);
         $content ->people = $request->people;
         $content ->day = $request->day;
         $content ->lat = $request->lat;

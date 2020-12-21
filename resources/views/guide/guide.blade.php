@@ -3,6 +3,10 @@
 @section('content')
 
 
+
+
+
+
     <section id="team" class="team section-bg mt-6">
         <h1 class="col-sm-6 mt-5">แนะนำสถานที่ท่องเที่ยว</h1>
         <form method="POST" action="{{ route('guide.store') }}" enctype="multipart/form-data">
@@ -17,19 +21,19 @@
                 </select>
             </div>
             <br>
-            
+
             <p class="col-sm-6">รูปแบบการท่องเที่ยว</p>
             <div class="col-sm-6 pl-5">
-                <input class="form-check-input" type="checkbox" name="use_type" value="ด้านธรรมชาติ">
-                <label class="form-check-label" for="use_type[]">ด้านธรรมชาติ</label>
+                <input class="form-check-input" type="checkbox" name="use_type[]" value="ด้านธรรมชาติ">
+                <label class="form-check-label" >ด้านธรรมชาติ</label>
             </div>
             <div class="col-sm-6 pl-5">
-                <input class="form-check-input" type="checkbox" name="use_type" value="ด้านวัฒนธรรมประเพณีวิถีชีวิต">
-                <label class="form-check-label" for="use_type[]">ด้านวัฒนธรรมประเพณีวิถีชีวิต</label>
+                <input class="form-check-input" type="checkbox" name="use_type[]" value="ด้านวัฒนธรรมประเพณีวิถีชีวิต">
+                <label class="form-check-label" >ด้านวัฒนธรรมประเพณีวิถีชีวิต</label>
             </div>
             <div class="col-sm-6 pl-5">
-                <input class="form-check-input" type="checkbox" name="use_type" value="ด้านสิ่งที่มนุษย์สร้างขึ้น">
-                <label class="form-check-label" for="use_type[]">ด้านสิ่งที่มนุษย์สร้างขึ้น</label>
+                <input class="form-check-input" type="checkbox" name="use_type[]" value="ด้านสิ่งที่มนุษย์สร้างขึ้น">
+                <label class="form-check-label" >ด้านสิ่งที่มนุษย์สร้างขึ้น</label>
             </div>
 
             @error('use_type')
@@ -50,13 +54,14 @@
             <div class="col-sm-6">
                 <label for="use_km">ระยะทางในการเดินทาง</label>
                 <select class="form-control" name="use_km">
-                    <option value="10">ภายใน 10 Km.</option>
-                    <option value="20">ภายใน 20 Km.</option>
-                    <option value="30">ภายใน 30 Km.</option>
-                    <option value="40">ภายใน 40 Km.</option>
-                    <option value="50">ภายใน 50 Km.</option>
+                    <option value="10km">ภายใน 10 Km.</option>
+                    <option value="20km">ภายใน 20 Km.</option>
+                    <option value="30km">ภายใน 30 Km.</option>
+                    <option value="40km">ภายใน 40 Km.</option>
+                    <option value="50km">ภายใน 50 Km.</option>
                 </select>
             </div>
+
             <div class="mt-3 pl-3"> <button class="btn btn-outline-success" type="submit" onclick="getLocation()" >ค้นหาสถานที่ท่องเที่ยว</button>
             </div>
         </form>

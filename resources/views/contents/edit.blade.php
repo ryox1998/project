@@ -9,6 +9,7 @@
         </div>
     @endif
 
+
     <h1>EDIT DATA</h1>
     <hr> <br>
     <form action="{{ route('contents.update', $content->id) }}" method="POST" enctype="multipart/form-data">
@@ -54,32 +55,30 @@
 
 
         <p class="form-group">รูปแบบการท่องเที่ยว :</p>
+        <p><strong> ข้อมูลเดิม : </strong> @foreach ((array)$content->type as $value) {{$value}}, @endforeach  </p>
         <div class="col-sm-6 pl-5">
-            <input class="form-check-input" type="checkbox" name="type[]"value="ด้านธรรมชาติ">
+            <input class="form-check-input" type="checkbox"name="type[]"
+             value="ด้านธรรมชาติ">
             <label class="form-check-label">ด้านธรรมชาติ</label>
         </div>
 
         <div class="col-sm-6 pl-5">
-            <input class="form-check-input" type="checkbox" name="type[]"value="ด้านวัฒนธรรมประเพณีวิถีชีวิต">
+            <input class="form-check-input" type="checkbox"name="type[]"
+            value="ด้านวัฒนธรรมประเพณีวิถีชีวิต">
             <label class="form-check-label">ด้านวัฒนธรรมประเพณีวิถีชีวิต</label>
         </div>
 
         <div class="col-sm-6 pl-5">
-            <input class="form-check-input" type="checkbox" name="type[]"value="ด้านสิ่งที่มนุษย์สร้างขึ้น">
+            <input class="form-check-input" type="checkbox" name="type[]"
+            value="ด้านสิ่งที่มนุษย์สร้างขึ้น">
             <label class="form-check-label">ด้านสิ่งที่มนุษย์สร้างขึ้น</label>
         </div>
-
-
 
         <div>
             @error('type')
                 <div class="alert alert-danger mb-1 mt-1">{{ $message }}</div>
             @enderror
         </div>
-
-
-
-
 
         <div class="form-group mt-4">
             <label for="people">จำนวนนักท่องเที่ยวที่แนะนำ :</label>

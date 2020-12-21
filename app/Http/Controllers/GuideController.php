@@ -40,11 +40,11 @@ class GuideController extends Controller
         [
             'use_type'=> 'required'
         ],
-    
+
             [
                 'use_type.required' => 'กรุณาเลือกรูปแบบการท่องเที่ยวด้วยครับ'
             ]
-        
+
         );
 
         if($request->isMethod('post')) {
@@ -52,20 +52,25 @@ class GuideController extends Controller
             $use_people = $request->get('use_people');
             $request->session()->put('use_people', $use_people);
 
-            $get_lat = $request->get('get_lat');
-            $request->session()->put('get_lat', $get_lat);
-            // $request->session()->put('use_type', 'use_type');
-            // $request->session()->put('use_day', 'use_day');
-            // $request->session()->put('use_km', 'use_type');
+
+            $use_type = $request->get('use_type');
+            $request->session()->put('use_type', $use_type);
+
+            $use_day = $request->get('use_day');
+            $request->session()->put('use_day', $use_day);
+
+            $use_km = $request->get('use_km');
+            $request->session()->put('use_km', $use_km);
+
         }
 
-        
+
 
         // $use_type = $request->get('use_type');
         // $use_day = $request->get('use_day');
         // $use_km = $request->get('use_km');
-        return redirect()->route('guide.index');
-        // return dd($use_people);
+        // return redirect()->route('guide.index');
+        return dd($use_people,$use_type,$use_day,$use_km);
     }
 
     /**

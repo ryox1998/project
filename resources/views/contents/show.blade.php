@@ -36,6 +36,6 @@
   <!--The div element for the map -->
   <div id="map"></div>
 </section>
-<h6 class="mt-3"> <strong> Tag : {{$content->people}} @foreach ((array)$content->type as $value), {{$value}} @endforeach </strong> </h6>
+<h6 class="mt-3"> <strong> Tag :{{$content->people}} @foreach ((array)$content->type as $value),{{$value}} @endforeach </strong> </h6>
 
 @endsection
