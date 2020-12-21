@@ -52,12 +52,10 @@
         </div>
 
 
-
-
         <p class="form-group">รูปแบบการท่องเที่ยว :</p>
-        <p><strong> ข้อมูลเดิม : </strong> @foreach ((array)$content->type as $value) {{$value}}, @endforeach  </p>
+        <p><strong> ข้อมูลเดิม :@foreach ((array)$content->type as $value) {{$value}} @endforeach </strong> </p>
         <div class="col-sm-6 pl-5">
-            <input class="form-check-input" type="checkbox"name="type[]"
+            <input class="form-check-input" type="checkbox" name="type[]"
              value="ด้านธรรมชาติ">
             <label class="form-check-label">ด้านธรรมชาติ</label>
         </div>
