@@ -5,8 +5,6 @@
 
 
 
-
-
     <section id="team" class="team section-bg mt-6">
         <h1 class="col-sm-6 mt-5">แนะนำสถานที่ท่องเที่ยว</h1>
         <form method="POST" action="{{ route('guide.store') }}" enctype="multipart/form-data">
@@ -62,9 +60,32 @@
                 </select>
             </div>
 
-            <div class="mt-3 pl-3"> <button class="btn btn-outline-success" type="submit" onclick="getLocation()" >ค้นหาสถานที่ท่องเที่ยว</button>
+
+            <a class="mt-3 pl-3 text-danger " onclick="getLocation()"><img src="{{asset('assets/img/location.svg')}}" alt="" height="50px" width="50px"> <strong>คลิกที่ ICON ด้านซ้ายมือเพื่อหาตำแหน่งปัจจุบันและ กรุณารอซักครู่ !!</strong> </a>
+            <p class="mt-3 pl-3 text-primary" id="location"></p>
+
+            <div class="mt-3 pl-3"> <button class="btn btn-outline-success" type="submit"  >ค้นหาสถานที่ท่องเที่ยว</button>
             </div>
         </form>
     </section>
+
+
+
+<script>
+    var x = document.getElementById("location");
+    function getLocation() {
+      if (navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition(showPosition);
+      } else {
+        x.innerHTML = "Geolocation is not supported by this browser.";
+      }
+    }
+
+    function showPosition(position) {
+      x.innerHTML = "Latitude: " + position.coords.latitude +
+      "<br>Longitude: " + position.coords.longitude;
+    }
+</script>
+
 
 @endsection
