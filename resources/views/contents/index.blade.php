@@ -47,10 +47,10 @@
         </div>
         @endforeach
       </div>
-      <div align ="center" class="mt-5">{{ $contents->links() }}</div>
+      {{-- <div align ="center" class="mt-5">{{ $contents->links() }}</div> --}}
     </div>
   </section><!-- End Team Section -->
 
- 
+
 
 @endsection

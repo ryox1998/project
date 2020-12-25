@@ -14,8 +14,9 @@ class GuideController extends Controller
     public function index(Request $request)
     {
         $use_people = $request->session()->get('use_people');
+        $use_type = $request->session()->get('use_type');
         $data['contents'] = Content::orderBy('id','desc')->paginate(6);
-        return view('guide.show',$data,['use_people'=>$use_people]);
+        return view('guide.show',$data,['use_people'=>$use_people],['use_type'=>$use_type]);
     }
     /**
      * Show the form for creating a new resource.
@@ -69,8 +70,8 @@ class GuideController extends Controller
         // $use_type = $request->get('use_type');
         // $use_day = $request->get('use_day');
         // $use_km = $request->get('use_km');
-        // return redirect()->route('guide.index');
-        return dd($use_people,$use_type,$use_day,$use_km);
+        return redirect()->route('guide.index');
+        // return dd($use_people,$use_type,$use_day,$use_km);
     }
 
     /**
