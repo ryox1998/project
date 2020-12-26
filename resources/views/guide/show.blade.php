@@ -18,8 +18,8 @@
       </div>
       <div class="row">
         @foreach ($contents as $content)
-        @if ($content->people == $use_people)
-
+        @foreach ((array)$content->type as $value)
+        @if ($use_type == $value)
         <div class="col-lg-4 col-md-6 d-flex align-items-stretch">
             <div class="member">
               <img  class="page-content" src="{{ Storage::url($content->image) }}" height="154.89px" width="275px"  alt="" />
@@ -43,9 +43,15 @@
               </form>
             </div>
           </div>
-
         @endif
+
+
+
+
         @endforeach
+        @endforeach
+
+
       </div>
       <div align ="center" class="mt-5">{{ $contents->links() }}</div>
     </div>

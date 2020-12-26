@@ -98,7 +98,7 @@
 
       <div class="form-group">
         <label for="lat">ละติจูด (Latitude) :</label>
-        <input type="text" class="form-control" name="lat" placeholder="เลขทศนิยม">
+        <input type="text" class="float form-control" name="lat" placeholder="เลขทศนิยม">
         @error('lat')
         <div class="alert alert-danger mb-1 mt-1">{{$message}}</div>
         @enderror
@@ -106,7 +106,7 @@
 
       <div class="form-group">
         <label for="long">ลองจิจูด (Longitude) :</label>
-        <input type="text" class="form-control" name="long" placeholder="เลขทศนิยม">
+        <input type="text" class="float form-control" name="long" placeholder="เลขทศนิยม">
         @error('long')
         <div class="alert alert-danger mb-1 mt-1">{{$message}}</div>
         @enderror

@@ -15,8 +15,13 @@ class GuideController extends Controller
     {
         $use_people = $request->session()->get('use_people');
         $use_type = $request->session()->get('use_type');
+        $use_day = $request->session()->get('use_day');
+        $use_km = $request->session()->get('use_km');
+        $Latitude = $request->session()->get('Latitude');
+        $Longitude = $request->session()->get('Longitude');
         $data['contents'] = Content::orderBy('id','desc')->paginate(6);
-        return view('guide.show',$data,['use_people'=>$use_people],['use_type'=>$use_type]);
+        return view('guide.show',$data,['use_type'=>$use_type]);
+        // return dd($use_people,$use_type,$use_day,$use_km,$Latitude,$Longitude);
     }
     /**
      * Show the form for creating a new resource.
@@ -39,11 +44,15 @@ class GuideController extends Controller
 
         $request->validate(
         [
-            'use_type'=> 'required'
+            'use_type'=> 'required',
+            'Latitude'=> 'required',
+            'Longitude'=> 'required'
         ],
 
             [
-                'use_type.required' => 'กรุณาเลือกรูปแบบการท่องเที่ยวด้วยครับ'
+                'use_type.required' => 'กรุณาเลือกรูปแบบการท่องเที่ยวด้วยครับ',
+                'Latitude.required' => 'กรุณากรอก ละติจูด ด้วยครับ',
+                'Longitude.required' => 'กรุณากรอก ลองติจูด ด้วยครับ'
             ]
 
         );
@@ -63,6 +72,12 @@ class GuideController extends Controller
             $use_km = $request->get('use_km');
             $request->session()->put('use_km', $use_km);
 
+            $Latitude = $request->get('Latitude');
+            $request->session()->put('Latitude', $Latitude);
+
+            $Longitude = $request->get('Longitude');
+            $request->session()->put('Longitude', $Longitude);
+
         }
 
 
@@ -71,7 +86,7 @@ class GuideController extends Controller
         // $use_day = $request->get('use_day');
         // $use_km = $request->get('use_km');
         return redirect()->route('guide.index');
-        // return dd($use_people,$use_type,$use_day,$use_km);
+        // return dd($use_people,$use_type,$use_day,$use_km,$Latitude,$Longitude);
     }
 
     /**

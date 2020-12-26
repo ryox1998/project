@@ -63,7 +63,7 @@
               <li><a href="{{ url('ampher/wang_chao')}}">วังเจ้า</a></li>
             </ul>
           </li>
-          
+
           <li class="drop-down"><a href="#">เจ้าหน้าที่</a>
             <ul>
               <li><a href="{{route('contents.create')}}">เพิ่มข้อมูล</a></li>
@@ -109,7 +109,7 @@
     <script src="{{ asset('assets/vendor/owl.carousel/owl.carousel.min.js') }}"></script>
 
     <!-- Template Main JS File -->
-    <script src="assets/js/main.js"></script>
+    <script src="{{asset('assets/js/main.js')}}"></script>
 
     </body>
     </html>

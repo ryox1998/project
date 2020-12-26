@@ -13,8 +13,8 @@
     <div class="container">
 
       <div class="section-title">
-        <span>สถานที่ท่องเที่ยว</span>
-        <h2>สถานที่ท่องเที่ยว</h2>
+        <span>สถานที่ท่องเที่ยว ใหม่ที่แนะนำ</span>
+        <h2>สถานที่ท่องเที่ยว ใหม่ที่แนะนำ</h2>
         <p>
 
             ตาก..เที่ยวได้ทุกวัน ตาก..เที่ยวได้ทุกที่ ตาก..เที่ยวได้ทุกฤดู !!
@@ -23,7 +23,9 @@
       <div class="row">
         @foreach ($contents as $content)
         <div class="col-lg-4 col-md-6 d-flex align-items-stretch">
+            <img  src="{{asset('assets/img/new.svg')}}" alt="" height="45px" width="45px">
           <div class="member">
+
             <img  class="page-content" src="{{ Storage::url($content->image) }}" height="154.89px" width="275px"  alt="" />
 
             <a href="{{ route('contents.show',$content->id) }}"> <h4> {{$content->name}}</h4></a>

@@ -196,11 +196,29 @@
         items: 1
     });
 
+    $(".float").bind("keyup", function(e) {
+
+        var ch = $(this).val(); //เก็บข้อความใน textbox ไว้ในตัวแปร ch
+        var digit; //ตัวแปรสำหรับเก็บตัวอักษรแต่ละอักขระในตัวแปร ch
+
+        // วน loop หาแต่ละตัวอักขระใน text box
+        for (var i = 0; i < ch.length; i++) {
+            digit = ch.charAt(i)
+
+            if (digit >= "0" && digit <= "9") //แต่ละอักขระอยู่ในช่วง 0-9  และเป็นทศนิยม หรือไม่
+            {
+
+            } else if (digit != ".") {
+                $(this).val($(this).val().replace(digit, ""));
+                //ถ้าไม่ได้อยู่ในช่วง 0-9 และไม่ได้เป็นทศนิยมจะตัดตัวอักขระตัวนั้นออก
+            }
+
+        }
+
+    });
 
 
-
-
-
+    $('#txt_lat').val(position.coords.latitude);
 
 
 })(jQuery);
