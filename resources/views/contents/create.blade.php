@@ -66,9 +66,6 @@
           @enderror
         </div>
 
-
-
-
     <div class="form-group mt-4">
       <label for="people">จำนวนนักท่องเที่ยวที่แนะนำ :</label>
       <select class="form-control" name="people">

@@ -23,10 +23,10 @@
       <div class="row">
         @foreach ($contents as $content)
         <div class="col-lg-4 col-md-6 d-flex align-items-stretch">
-            <img  src="{{asset('assets/img/new.svg')}}" alt="" height="45px" width="45px">
-          <div class="member">
 
-            <img  class="page-content" src="{{ Storage::url($content->image) }}" height="154.89px" width="275px"  alt="" />
+          <div class="member">
+            <img class="position-absolute" src="{{asset('assets/img/newl.svg')}}" height="45px" width="45px">
+            <img  class="page-content" src="{{ Storage::url($content->image) }}" height="154.89px" width="275px" />
 
             <a href="{{ route('contents.show',$content->id) }}"> <h4> {{$content->name}}</h4></a>
             <span>อำเภอ {{$content->ampher}}</span> <hr> <br>
