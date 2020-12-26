@@ -71,7 +71,7 @@
                         <span class="input-group-text" id="num">ละติจูด</span>
                     </div>
                     <input id="Latitude" type="text" class="float form-control" placeholder="Latitude" aria-label="Username"
-                        name="Latitude" aria-describedby="basic-addon1" value="">
+                        name="Latitude" aria-describedby="basic-addon1" >
                 </div>
                 @error('Latitude')
                     <div class="alert alert-danger mb-1 mt-1">{{ $message }}</div>

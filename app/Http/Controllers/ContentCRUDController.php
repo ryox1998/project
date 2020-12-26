@@ -4,7 +4,8 @@ namespace App\Http\Controllers;
 use App\Models\Content;
 use Illuminate\Http\Request;
 use App\Http\Controllers\GuideController;
-
+use Facade\FlareClient\Stacktrace\File;
+use Illuminate\Support\Facades\Storage;
 use function PHPSTORM_META\type;
 
 class ContentCRUDController extends Controller
@@ -140,7 +141,6 @@ class ContentCRUDController extends Controller
 
 
         $content = Content::find($id);
-
         if ($request->hasFile('image')){
             $request->validate(['image' => 'required|image|mimes:jpg,png,jpeg,gif,svg|max:2048',
             ]);
@@ -170,6 +170,8 @@ class ContentCRUDController extends Controller
      */
     public function destroy(Content $content)
     {
+
+        Storage::delete($content->image);
         $content->delete();
         return redirect()->route('contents.index')
                         ->with('success','Content has been deleted successfully');

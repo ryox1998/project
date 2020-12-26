@@ -220,5 +220,4 @@
 
     $('#txt_lat').val(position.coords.latitude);
 
-
 })(jQuery);
