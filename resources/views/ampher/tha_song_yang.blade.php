@@ -21,15 +21,13 @@
         <div class="col-lg-4 col-md-6 d-flex align-items-stretch">
             <div class="member">
               <img  class="page-content" src="{{ Storage::url($content->image) }}" height="154.89px" width="275px"  alt="" />
-  
+
               <a href="{{ route('contents.show',$content->id) }}"> <h4> {{$content->name}}</h4></a>
               <span>อำเภอ {{$content->ampher}}</span> <hr> <br>
                   <p class="a">{{$content->detail}}</p>
               <div class="social">
-                <a href=""><i class="icofont-twitter"></i></a>
-                <a href=""><i class="icofont-facebook"></i></a>
-                <a href=""><i class="icofont-instagram"></i></a>
-                <a href=""><i class="icofont-linkedin"></i></a>
+                <a href="https://www.facebook.com/taktravel" target="_blank" ><i class="icofont-facebook"></i></a>
+                <a href="https://www.instagram.com/taktravel/" target="_blank"><i class="icofont-instagram"></i></a>
                 <p>เขียนเมื่อ {{$content->created_at}}</p>
                 <a  href="{{ route('contents.show',$content->id) }}">อ่านเพิ่มเติม</a>
               </div>
@@ -41,7 +39,7 @@
               </form>
             </div>
           </div>
-            
+
         @endif
         @endforeach
       </div>
