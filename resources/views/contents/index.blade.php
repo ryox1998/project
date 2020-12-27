@@ -27,7 +27,7 @@
                         <div class="member">
                             <img class="position-absolute" src="{{ asset('assets/img/newl.svg') }}" height="45px"
                                 width="45px">
-                            <img class="page-content" src="{{ Storage::url($content->image) }}" height="154.89px"
+                            <img class="page-content" src="{{asset('public/image_path.jpg')}}" height="154.89px"
                                 width="275px" />
 
                             <a href="{{ route('contents.show', $content->id) }}">
@@ -64,25 +64,28 @@
     </section><!-- End Team Section -->
 
 
+
+
     <script>
-        function del_ct(){
-                swal({
-                title: "Are you sure?",
-                text: "Once deleted, you will not be able to recover this imaginary file!",
-                icon: "warning",
-                buttons: true,
-                dangerMode: true,
+        function del_ct() {
+            swal({
+                    title: "Are you sure?",
+                    text: "Once deleted, you will not be able to recover this imaginary file!",
+                    icon: "warning",
+                    buttons: true,
+                    dangerMode: true,
                 })
                 .then((willDelete) => {
-                if (willDelete) {
-                    swal("Poof! Your imaginary file has been deleted!", {
-                    icon: "success",
-                    });
-                } else {
-                    swal("Your imaginary file is safe!");
-                }
+                    if (willDelete) {
+                        swal("Poof! Your imaginary file has been deleted!", {
+                            icon: "success",
+                        });
+                    } else {
+                        swal("Your imaginary file is safe!");
+                    }
                 });
         }
+
     </script>
 
 @endsection

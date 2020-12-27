@@ -63,6 +63,7 @@
                         src="{{ asset('assets/img/location.svg') }}" alt="" height="15px"
                         width="15px"><U><small>คลิกเพื่อหาตำแหน่งปัจจุบันและกรุณารอซักครู่ !!</small></U></a>
                 <p hidden class="mt-3 pl-3 text-primary" id="location"></p>
+
                 {{-- End Show Lat and Long --}}
 
                 {{-- input Latitude --}}
@@ -118,6 +119,12 @@
         }
 
     </script>
+
+
+
+
+
+
 
 
 @endsection
