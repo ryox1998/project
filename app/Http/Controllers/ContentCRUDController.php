@@ -63,6 +63,11 @@ class ContentCRUDController extends Controller
 
     );
 
+
+
+
+
+
         $path = $request->file('image')->store('public/images');
         $content = new Content;
         $content ->name = $request->name;
@@ -147,6 +152,9 @@ class ContentCRUDController extends Controller
             $path = $request->file('image')->store('public/images');
             $content->image = $path;
         }
+
+
+
 
         $content ->name = $request->name;
         $content ->detail = $request->detail;

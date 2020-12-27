@@ -20,7 +20,7 @@ class GuideController extends Controller
         $Latitude = $request->session()->get('Latitude');
         $Longitude = $request->session()->get('Longitude');
         $data['contents'] = Content::orderBy('id','desc')->paginate(6);
-        return view('guide.show',$data,compact('use_people','use_type'));
+        return view('guide.show',$data,compact('use_people','use_type','use_day','use_km','Latitude','Longitude'));
         // return dd($use_people,$use_type,$use_day,$use_km,$Latitude,$Longitude);
     }
     /**

@@ -117,7 +117,6 @@
                 $("#Latitude").val(position.coords.latitude);
                 $("#Longitude").val(position.coords.longitude);
         }
-
     </script>
 
 
