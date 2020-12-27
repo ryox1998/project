@@ -155,7 +155,6 @@ class ContentCRUDController extends Controller
 
 
 
-
         $content ->name = $request->name;
         $content ->detail = $request->detail;
         // $content ->type = $request->type;
