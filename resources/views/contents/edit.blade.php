@@ -135,7 +135,7 @@
         </div>
 
         <div class="form-group mt-5">
-            <img src="{{ Storage::url($content->image) }}" height="30%" width="30%" alt="" />
+            <img src="{{ asset('storage/'.$content->image) }}" height="30%" width="30%" alt="" />
         </div>
         <div class="col-md-6">
             <button type="submit" class="btn btn-success">บันทึกข้อมูล</button>

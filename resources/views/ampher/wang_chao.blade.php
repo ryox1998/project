@@ -20,7 +20,7 @@
 
         <div class="col-lg-4 col-md-6 d-flex align-items-stretch">
             <div class="member">
-              <img  class="page-content" src="{{ Storage::url($content->image) }}" height="154.89px" width="275px"  alt="" />
+              <img  class="page-content" src="{{ asset('storage/'.$content->image) }}" height="154.89px" width="275px"  alt="" />
 
               <a href="{{ route('contents.show',$content->id) }}"> <h4> {{$content->name}}</h4></a>
               <span>อำเภอ {{$content->ampher}}</span> <hr> <br>
