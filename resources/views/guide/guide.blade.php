@@ -1,12 +1,13 @@
 @extends('layouts.show')
 @section('title', 'guide')
 @section('content')
+
     <div class="d-flex justify-content-center">
         <section id="team" class="team section-bg col-sm-8 mt-6 ">
             <h1 class="col-sm-8 mt-5">แนะนำสถานที่ท่องเที่ยว</h1>
             <form method="POST" action="{{ route('guide.store') }}" enctype="multipart/form-data">
                 @csrf
-                <div class="col-sm-6">
+                <div class="col-sm-6 mt-3">
                     <label for="use_people">มาเที่ยวกี่คน</label>
                     <select class="form-control" name="use_people">
                         <option>เที่ยวเดี่ยว</option>

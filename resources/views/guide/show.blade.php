@@ -3,6 +3,8 @@
 @section('content')
 
 
+
+
 <!-- ======= Team Section ======= -->
 <section id="team" class="team section-bg mt-5">
     <div class="container">
@@ -18,9 +20,9 @@
       <div class="row">
 
 
-        @foreach ($contents as $content)
-        @foreach(Session::get('use_type') as $use_type)
-        @foreach ((array)$content->type as $value)
+        @foreach ($contents as $content)   {{-- loop แสดงเนื้อหาสถานที่ท่องเที่ยว --}}
+        @foreach(Session::get('use_type') as $use_type)  {{-- loop ดูข้อมูลหน้าแนะนำสถานที่ท่องเที่ยว Data ประเภทของการท่องเที่ยว --}}
+        @foreach ((array)$content->type as $value)  {{-- loop แสดงข้อมูลประเภทการท่องเที่ยวของ Content --}}
 
         @if ($use_type == "ด้านธรรมชาติ")
         {{$value}}
@@ -33,11 +35,9 @@
         @break
         @endif
 
-
-
-        @endforeach
-        @endforeach
-        @endforeach
+        @endforeach {{-- End loop แสดงเนื้อหาสถานที่ท่องเที่ยว --}}
+        @endforeach {{-- End loop ดูข้อมูลหน้าแนะนำสถานที่ท่องเที่ยว Data ประเภทของการท่องเที่ยว --}}
+        @endforeach {{-- End loop แสดงข้อมูลประเภทการท่องเที่ยวของ Content --}}
 
 
       </div>

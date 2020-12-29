@@ -1,10 +1,11 @@
-@extends('layouts.main')
+@extends('layouts.show')
 @section('title','Insert')
 @section('content')
 
 
-
-<h1>INSERT DATA</h1>
+<div class="d-flex justify-content-center">
+<section id="team" class="team section-bg col-sm-8 mt-6 ">
+<h1 class="mt-5">INSERT DATA</h1>
 <hr><br>
 <form action="{{ route('contents.store')}}" method="POST" enctype="multipart/form-data">
     @csrf
@@ -124,6 +125,8 @@
   </form>
 
   <div class="mt-5"></div>
+</section>
+</div>
 
 
 @endsection
