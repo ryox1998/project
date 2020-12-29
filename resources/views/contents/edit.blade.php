@@ -53,7 +53,15 @@
 
 
         <p class="form-group">รูปแบบการท่องเที่ยว :</p>
-        <p><strong> ข้อมูลเดิม : </strong>    @foreach ((array)$content->type as $value){{$value}} @endforeach</p>
+        <p><strong> ข้อมูลเดิม : </strong>
+            @foreach ((array)$content->type as $value)
+            &nbsp;
+            &nbsp;
+            &nbsp;
+            <input class="form-check-input" type="checkbox" name="type[]" checked value="{{$value}}">
+           <label class="form-check-label">{{$value}}</label>
+           @endforeach
+        </p>
 
         <div class="col-sm-6 pl-5">
             <input class="form-check-input" type="checkbox" name="type[]"

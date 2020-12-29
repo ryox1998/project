@@ -103,7 +103,6 @@
                                 @break
                                 @case(30)
                                 <?php
-
                                 $lat1 = $Latitude ;
                                 $lon1 = $Longitude;
                                 $lat2 = $content->lat;
@@ -177,6 +176,7 @@
                               </div>
                             @endif
                                 @break
+
                                 @case(50)
                                 <?php
 
@@ -191,7 +191,7 @@
                                 $miles = $dist * 60 * 1.1515;
                                 $km = $miles * 1.609344 ;
                             ?>
-                            @if ($km>0)
+                            @if ($km>0 && $km <=200)
                             <div class="col-lg-4 col-md-6 d-flex align-items-stretch">
                                 <div class="member">
                                   <img  class="page-content" src="{{ asset('storage/'.$content->image) }}" height="154.89px" width="275px"  alt="" />
