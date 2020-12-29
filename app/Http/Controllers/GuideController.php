@@ -15,15 +15,14 @@ class GuideController extends Controller
      */
     public function index(Request $request)
     {
-
         $use_people = $request->session()->get('use_people');
         $use_type = $request->session()->get('use_type');
         $use_day = $request->session()->get('use_day');
         $use_km = $request->session()->get('use_km');
         $Latitude = $request->session()->get('Latitude');
         $Longitude = $request->session()->get('Longitude');
-        $data['contents'] = Content::orderBy('id','desc')->paginate(6);
-        return view('guide.show',$data,compact('use_people','use_type','use_day','use_km','Latitude','Longitude'));
+        $data['contents'] = Content::orderBy('id','desc')->paginate(3);
+        return view('guide.show',$data,compact('use_people','use_type','use_day','use_km','Latitude','Longitude'),['use_type' => 'use_type']);
         // return dd($use_people,$use_type,$use_day,$use_km,$Latitude,$Longitude);
     }
     /**
