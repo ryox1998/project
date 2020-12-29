@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 use App\Models\Content;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Session;
+use Location\Coordinate;
+use Location\Distance\Vincenty;
 class GuideController extends Controller
 {
     /**
@@ -13,6 +15,7 @@ class GuideController extends Controller
      */
     public function index(Request $request)
     {
+
         $use_people = $request->session()->get('use_people');
         $use_type = $request->session()->get('use_type');
         $use_day = $request->session()->get('use_day');

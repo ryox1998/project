@@ -50,11 +50,11 @@
                 <div class="col-sm-6">
                     <label for="use_km">ระยะทางในการเดินทาง</label>
                     <select class="form-control" name="use_km">
-                        <option value="10km">ภายใน 10 Km.</option>
-                        <option value="20km">ภายใน 20 Km.</option>
-                        <option value="30km">ภายใน 30 Km.</option>
-                        <option value="40km">ภายใน 40 Km.</option>
-                        <option value="50km">ภายใน 50 Km.</option>
+                        <option value="10">ช่วง 10 Km.</option>
+                        <option value="20">ช่วง 20 Km.</option>
+                        <option value="30">ช่วง 30 Km.</option>
+                        <option value="40">ช่วง 40 Km.</option>
+                        <option value="50">ช่วง 50 Km. ขึ้นไป</option>
                     </select>
                 </div>
 
