@@ -17,27 +17,32 @@
             <div class="row">
 
 
-                @foreach ($contents as $content) {{--loopแสดงเนื้อหาสถานที่ท่องเที่ยว --}}
-                    @foreach (Session::get('use_type') as $use_type) {{-- loop ดูข้อมูลหน้าแนะนำสถานที่ท่องเที่ยว Dataประเภทของการท่องเที่ยว --}}
-                        @foreach ((array) $content->type as $value) {{-- loop แสดงข้อมูลประเภทการท่องเที่ยวของContent--}}
+                @foreach ($contents as $content)
+                    {{--loopแสดงเนื้อหาสถานที่ท่องเที่ยว --}}
+                    @foreach ((array) $content->type as $value)
+                        {{-- loop
+                        แสดงข้อมูลประเภทการท่องเที่ยวของContent--}}
+
+                        <?php
+                        $lat1 = $Latitude ;
+                        $lon1 = $Longitude;
+                        $lat2 = $content->lat;
+                        $lon2 = $content->long;
+                        $theta = $lon1 - $lon2;
+                        $dist = sin(deg2rad($lat1)) * sin(deg2rad($lat2)) +  cos(deg2rad($lat1)) * cos(deg2rad($lat2)) * cos(deg2rad($theta));
+                        $dist = acos($dist);
+                        $dist = rad2deg($dist);
+                        $miles = $dist * 60 * 1.1515;
+                        $km = $miles * 1.609344 ;
+                         ?>
 
                         @switch($use_km)
+                        @case(10)
+                         @if ($km <=10)
+                             @foreach (Session::get('use_type') as $use_type)
 
-                            @case(10)
-                            <?php
-                            $lat1 = $Latitude ;
-                            $lon1 = $Longitude;
-                            $lat2 = $content->lat;
-                            $lon2 = $content->long;
-                            $theta = $lon1 - $lon2;
-                            $dist = sin(deg2rad($lat1)) * sin(deg2rad($lat2)) +  cos(deg2rad($lat1)) * cos(deg2rad($lat2)) * cos(deg2rad($theta));
-                            $dist = acos($dist);
-                            $dist = rad2deg($dist);
-                            $miles = $dist * 60 * 1.1515;
-                            $km = $miles * 1.609344 ;
-                             ?>
+                             @if ($use_type == $value)
 
-                             @if ($km <=10)
                              <div class="col-lg-4 col-md-6 d-flex align-items-stretch">
                                 <div class="member">
                                   <img  class="page-content" src="{{ asset('storage/'.$content->image) }}" height="154.89px" width="275px"  alt="" />
@@ -60,18 +65,23 @@
                                 </div>
                               </div>
                              @endif
-                                @break
+                             @break
+                             @endforeach
+                         @endif
 
-                            @case(20)
-                                @break
+                            @break
 
-                            @default
-                        @endswitch
+                        @case(20)
+                            @break
 
-                        @break   {{-- กันลูปซ้ำ --}}
-                        @endforeach {{-- Endloopแสดงเนื้อหาสถานที่ท่องเที่ยว --}}
-                    @endforeach {{-- End loopดูข้อมูลหน้าแนะนำสถานที่ท่องเที่ยว Data ประเภทของการท่องเที่ยว --}}
-                @endforeach {{-- End loopแสดงข้อมูลประเภทการท่องเที่ยวของContent --}}
+                        @default
+                    @endswitch
+
+
+                    @endforeach {{-- Endloopแสดงเนื้อหาสถานที่ท่องเที่ยว
+                    --}}
+                @endforeach {{-- End
+                loopแสดงข้อมูลประเภทการท่องเที่ยวของContent --}}
 
 
             </div>
