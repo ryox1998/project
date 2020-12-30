@@ -37,9 +37,10 @@
                         $miles = $dist * 60 * 1.1515;
                         $km = $miles * 1.609344 ;
                          ?>
+
                          @if ($km <=10)
                              @foreach (Session::get('use_type') as $use_type)
-                             @if ($value == $use_type)
+                             @if ($use_type == $value )
                              <div class="col-lg-4 col-md-6 d-flex align-items-stretch">
                                 <div class="member">
                                   <img  class="page-content" src="{{ asset('storage/'.$content->image) }}" height="154.89px" width="275px"  alt="" />
@@ -61,11 +62,11 @@
                                   </form>
                                 </div>
                               </div>
+
                              @endif
                              @break
                              @endforeach
                          @endif
-
                             @break
 
                         @case(20)
@@ -82,6 +83,7 @@
 
 
             </div>
+
             <div align="center" class="mt-5">{{ $contents->links() }}</div>
         </div>
     </section><!-- End Team Section -->

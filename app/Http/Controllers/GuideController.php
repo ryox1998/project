@@ -6,6 +6,8 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Session;
 use Location\Coordinate;
 use Location\Distance\Vincenty;
+
+
 class GuideController extends Controller
 {
     /**
@@ -21,8 +23,16 @@ class GuideController extends Controller
         $use_km = $request->session()->get('use_km');
         $Latitude = $request->session()->get('Latitude');
         $Longitude = $request->session()->get('Longitude');
-        $data['contents'] = Content::orderBy('id','desc')->paginate(3);
-        return view('guide.show',$data,compact('use_people','use_type','use_day','use_km','Latitude','Longitude'),['use_type' => 'use_type']);
+
+
+        $data['contents'] = Content::orderBy('id','desc')->simplePaginate(3);
+        return view('guide.show',$data,compact('use_people','use_type','use_day','use_km','Latitude','Longitude'));
+
+
+
+
+
+
         // return dd($use_people,$use_type,$use_day,$use_km,$Latitude,$Longitude);
     }
     /**

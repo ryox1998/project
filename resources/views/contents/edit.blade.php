@@ -55,15 +55,14 @@
         <p class="form-group">รูปแบบการท่องเที่ยว :</p>
         <p><strong> ข้อมูลเดิม : </strong>
 
-            <?php
-            $box1  ="";
-            $box2 = "" ;
-            $box3  = "";
-            ?>
+        <?php
+            $box1  = null;
+            $box2 = null ;
+            $box3  = null;?>
 
             @foreach ((array) $content->type as $value)
             @if ($value == "ด้านธรรมชาติ" )
-                <?php $box1 = "checked" ?>
+            <?php $box1 = "checked" ?>
             @endif
 
             @if ($value == "ด้านวัฒนธรรมประเพณีวิถีชีวิต" )
