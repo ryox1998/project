@@ -23,6 +23,8 @@
                         {{-- loop
                         แสดงข้อมูลประเภทการท่องเที่ยวของContent--}}
 
+                        @switch($use_km)
+                        @case(10)
                         <?php
                         $lat1 = $Latitude ;
                         $lon1 = $Longitude;
@@ -35,14 +37,9 @@
                         $miles = $dist * 60 * 1.1515;
                         $km = $miles * 1.609344 ;
                          ?>
-
-                        @switch($use_km)
-                        @case(10)
                          @if ($km <=10)
                              @foreach (Session::get('use_type') as $use_type)
-
-                             @if ($use_type == $value)
-
+                             @if ($value == $use_type)
                              <div class="col-lg-4 col-md-6 d-flex align-items-stretch">
                                 <div class="member">
                                   <img  class="page-content" src="{{ asset('storage/'.$content->image) }}" height="154.89px" width="275px"  alt="" />

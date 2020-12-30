@@ -54,30 +54,40 @@
 
         <p class="form-group">รูปแบบการท่องเที่ยว :</p>
         <p><strong> ข้อมูลเดิม : </strong>
-            @foreach ((array)$content->type as $value)
-            &nbsp;
-            &nbsp;
-            &nbsp;
-            <input class="form-check-input" type="checkbox" name="type[]" checked value="{{$value}}">
-           <label class="form-check-label">{{$value}}</label>
-           @endforeach
+
+            <?php
+            $box1  ="";
+            $box2 = "" ;
+            $box3  = "";
+            ?>
+
+            @foreach ((array) $content->type as $value)
+            @if ($value == "ด้านธรรมชาติ" )
+                <?php $box1 = "checked" ?>
+            @endif
+
+            @if ($value == "ด้านวัฒนธรรมประเพณีวิถีชีวิต" )
+            <?php $box2 = "checked" ?>
+            @endif
+
+            @if ($value == "ด้านสิ่งที่มนุษย์สร้างขึ้น" )
+            <?php $box3 = "checked" ?>
+            @endif
+            @endforeach
         </p>
 
         <div class="col-sm-6 pl-5">
-            <input class="form-check-input" type="checkbox" name="type[]"
-             value="ด้านธรรมชาติ">
+            <input class="form-check-input" type="checkbox" name="type[]" {{$box1}} value="ด้านธรรมชาติ">
             <label class="form-check-label">ด้านธรรมชาติ</label>
         </div>
 
         <div class="col-sm-6 pl-5">
-            <input class="form-check-input" type="checkbox"name="type[]"
-            value="ด้านวัฒนธรรมประเพณีวิถีชีวิต">
+            <input class="form-check-input" type="checkbox" name="type[]" {{$box2}} value="ด้านวัฒนธรรมประเพณีวิถีชีวิต">
             <label class="form-check-label">ด้านวัฒนธรรมประเพณีวิถีชีวิต</label>
         </div>
 
         <div class="col-sm-6 pl-5">
-            <input class="form-check-input" type="checkbox" name="type[]"
-            value="ด้านสิ่งที่มนุษย์สร้างขึ้น">
+            <input class="form-check-input" type="checkbox" name="type[]" {{$box3}} value="ด้านสิ่งที่มนุษย์สร้างขึ้น">
             <label class="form-check-label">ด้านสิ่งที่มนุษย์สร้างขึ้น</label>
         </div>
 
@@ -143,7 +153,7 @@
         </div>
 
         <div class="form-group mt-5">
-            <img src="{{ asset('storage/'.$content->image) }}" height="30%" width="30%" alt="" />
+            <img src="{{ asset('storage/' . $content->image) }}" height="30%" width="30%" alt="" />
         </div>
         <div class="col-md-6">
             <button type="submit" class="btn btn-success">บันทึกข้อมูล</button>
