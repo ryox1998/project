@@ -25,7 +25,7 @@ class GuideController extends Controller
         $Longitude = $request->session()->get('Longitude');
 
 
-        $data['contents'] = Content::orderBy('id','desc')->simplePaginate(3);
+        $data['contents'] = Content::orderBy('id','desc')->simplePaginate(6);
         return view('guide.show',$data,compact('use_people','use_type','use_day','use_km','Latitude','Longitude'));
 
 
