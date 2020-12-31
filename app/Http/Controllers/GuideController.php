@@ -29,36 +29,47 @@ class GuideController extends Controller
             $type = $type.$value;
         }
 
-        if ($type == "ด้านธรรมชาติ") {
-            return dd('A');
-        }
-        else if ($type == "ด้านวัฒนธรรมประเพณีวิถีชีวิต") {
-            return dd('B');
-        }
 
-        else if ($type == "ด้านสิ่งที่มนุษย์สร้างขึ้น") {
-            return dd('C');
-        }
+            if ($type == "ด้านธรรมชาติ") {
+                // return dd('A');
+                $data['contents'] = Content::where('type','["\u0e14\u0e49\u0e32\u0e19\u0e18\u0e23\u0e23\u0e21\u0e0a\u0e32\u0e15\u0e34"]')->simplePaginate(3);
+                // return dd($data);
+            }
+            else if ($type == "ด้านวัฒนธรรมประเพณีวิถีชีวิต") {
+                // return dd('B');
+                $data['contents'] = Content::where('type','["\u0e14\u0e49\u0e32\u0e19\u0e27\u0e31\u0e12\u0e19\u0e18\u0e23\u0e23\u0e21\u0e1b\u0e23\u0e30\u0e40\u0e1e\u0e13\u0e35\u0e27\u0e34\u0e16\u0e35\u0e0a\u0e35\u0e27\u0e34\u0e15"]')->simplePaginate(3);
+            }
 
-        else if ($type == "ด้านธรรมชาติด้านวัฒนธรรมประเพณีวิถีชีวิต") {
-            return dd('A & B');
-        }
+            else if ($type == "ด้านสิ่งที่มนุษย์สร้างขึ้น") {
+                // return dd('C');
+                $data['contents'] = Content::where('type','["\u0e14\u0e49\u0e32\u0e19\u0e2a\u0e34\u0e48\u0e07\u0e17\u0e35\u0e48\u0e21\u0e19\u0e38\u0e29\u0e22\u0e4c\u0e2a\u0e23\u0e49\u0e32\u0e07\u0e02\u0e36\u0e49\u0e19"]')->simplePaginate(3);
+            }
 
-        else if ($type == "ด้านธรรมชาติด้านสิ่งที่มนุษย์สร้างขึ้น") {
-            return dd('A & C');
-        }
+            else if ($type == "ด้านธรรมชาติด้านวัฒนธรรมประเพณีวิถีชีวิต") {
+                // return dd('A & B');
+                $data['contents'] = Content::where('type','["\u0e14\u0e49\u0e32\u0e19\u0e18\u0e23\u0e23\u0e21\u0e0a\u0e32\u0e15\u0e34","\u0e14\u0e49\u0e32\u0e19\u0e27\u0e31\u0e12\u0e19\u0e18\u0e23\u0e23\u0e21\u0e1b\u0e23\u0e30\u0e40\u0e1e\u0e13\u0e35\u0e27\u0e34\u0e16\u0e35\u0e0a\u0e35\u0e27\u0e34\u0e15"]')->simplePaginate(3);
+            }
 
-        else if ($type == "ด้านธรรมชาติด้านวัฒนธรรมประเพณีวิถีชีวิตด้านสิ่งที่มนุษย์สร้างขึ้น") {
-            return dd('A & B & C');
-        }
+            else if ($type == "ด้านธรรมชาติด้านสิ่งที่มนุษย์สร้างขึ้น") {
+                // return dd('A & C');
+                $data['contents'] = Content::where('type','["\u0e14\u0e49\u0e32\u0e19\u0e18\u0e23\u0e23\u0e21\u0e0a\u0e32\u0e15\u0e34","\u0e14\u0e49\u0e32\u0e19\u0e2a\u0e34\u0e48\u0e07\u0e17\u0e35\u0e48\u0e21\u0e19\u0e38\u0e29\u0e22\u0e4c\u0e2a\u0e23\u0e49\u0e32\u0e07\u0e02\u0e36\u0e49\u0e19"]')->simplePaginate(3);
+            }
 
-        else if ($type == "ด้านวัฒนธรรมประเพณีวิถีชีวิตด้านสิ่งที่มนุษย์สร้างขึ้น") {
-            return dd('B & C');
-        }
+            else if ($type == "ด้านธรรมชาติด้านวัฒนธรรมประเพณีวิถีชีวิตด้านสิ่งที่มนุษย์สร้างขึ้น") {
+                // return dd('A  B  C');
+                $data['contents'] = Content::where('type','["\u0e14\u0e49\u0e32\u0e19\u0e18\u0e23\u0e23\u0e21\u0e0a\u0e32\u0e15\u0e34","\u0e14\u0e49\u0e32\u0e19\u0e27\u0e31\u0e12\u0e19\u0e18\u0e23\u0e23\u0e21\u0e1b\u0e23\u0e30\u0e40\u0e1e\u0e13\u0e35\u0e27\u0e34\u0e16\u0e35\u0e0a\u0e35\u0e27\u0e34\u0e15","\u0e14\u0e49\u0e32\u0e19\u0e2a\u0e34\u0e48\u0e07\u0e17\u0e35\u0e48\u0e21\u0e19\u0e38\u0e29\u0e22\u0e4c\u0e2a\u0e23\u0e49\u0e32\u0e07\u0e02\u0e36\u0e49\u0e19"]')->simplePaginate(3);
+            }
 
+            else if ($type == "ด้านวัฒนธรรมประเพณีวิถีชีวิตด้านสิ่งที่มนุษย์สร้างขึ้น") {
+                // return dd('B & C');
+                $data['contents'] = Content::where('type','["\u0e14\u0e49\u0e32\u0e19\u0e27\u0e31\u0e12\u0e19\u0e18\u0e23\u0e23\u0e21\u0e1b\u0e23\u0e30\u0e40\u0e1e\u0e13\u0e35\u0e27\u0e34\u0e16\u0e35\u0e0a\u0e35\u0e27\u0e34\u0e15","\u0e14\u0e49\u0e32\u0e19\u0e2a\u0e34\u0e48\u0e07\u0e17\u0e35\u0e48\u0e21\u0e19\u0e38\u0e29\u0e22\u0e4c\u0e2a\u0e23\u0e49\u0e32\u0e07\u0e02\u0e36\u0e49\u0e19"]')->simplePaginate(3);
+            }
 
-        // return view('guide.show',$data,compact('use_people','use_day','use_km','Latitude','Longitude'));
-
+            // $data['contents'] = Content::orderBy('id','desc')->simplePaginate(3);
+        // Content::where('type', 'ด้านธรรมชาติ')
+        // ->orWhere('age', 20)
+        // ->get();
+        return view('guide.show',$data,compact('use_people','use_day','use_km','Latitude','Longitude'));
         // return dd($use_people,$use_type,$use_day,$use_km,$Latitude,$Longitude);
     }
     /**

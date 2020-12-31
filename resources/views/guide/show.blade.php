@@ -15,16 +15,8 @@
             </div>
 
             <div class="row">
-
-
-                @foreach ($contents as $content)
-                    {{--loopแสดงเนื้อหาสถานที่ท่องเที่ยว --}}
-                    @foreach ((array) $content->type as $value)
-                        {{-- loop
-                        แสดงข้อมูลประเภทการท่องเที่ยวของContent--}}
-
+                @foreach ($contents as $content) {{--loopแสดงเนื้อหาสถานที่ท่องเที่ยว --}}
                         @switch($use_km)
-
                         @case(10)
                         <?php
                         $lat1 = $Latitude ;
@@ -40,8 +32,6 @@
                          ?>
 
                          @if ($km <=10)
-                             @foreach (Session::get('use_type') as $use_type)
-                             @if ($use_type == $value )
                              <div class="col-lg-4 col-md-6 d-flex align-items-stretch">
                                 <div class="member">
                                   <img  class="page-content" src="{{ asset('storage/'.$content->image) }}" height="154.89px" width="275px"  alt="" />
@@ -62,29 +52,16 @@
                                   </form>
                                 </div>
                               </div>
-                             @endif
-                             @break
-                             @endforeach
                          @endif
-                        @break
-
-                            {{-- case1 --}}
+                        @break {{-- case1 --}}
 
                         @case(20)
-                            @break
+                            @break  {{-- case2 --}}
 
                         @default
                     @endswitch
-
-
-                    @endforeach {{-- Endloopแสดงเนื้อหาสถานที่ท่องเที่ยว
-                    --}}
-                @endforeach {{-- End
-                loopแสดงข้อมูลประเภทการท่องเที่ยวของContent --}}
-
-
+                @endforeach {{-- Endloopแสดงข้อมูลประเภทการท่องเที่ยวของContent --}}
             </div>
-
             {{-- <div align="center" class="mt-5">{{ $contents->links() }}</div> --}}
         </div>
     </section><!-- End Team Section -->

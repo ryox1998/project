@@ -43,8 +43,6 @@
         @enderror
       </div>
 
-
-
       <p class="form-group">รูปแบบการท่องเที่ยว :</p>
       <div class="col-sm-6 pl-5">
           <input class="form-check-input" type="checkbox"  name="type[]" value="ด้านธรรมชาติ">
