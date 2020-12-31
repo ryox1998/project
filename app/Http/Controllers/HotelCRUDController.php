@@ -144,8 +144,11 @@ class HotelCRUDController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(hotel $hotel)
     {
-        //
+        Storage::delete($hotel->h_image);
+        $hotel->delete();
+        return redirect()->route('hotels.index')
+                        ->with('success','Hotels has been deleted successfully');
     }
 }

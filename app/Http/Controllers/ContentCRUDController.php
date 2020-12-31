@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 use App\Models\Content;
 use App\Models\hotel;
+use App\Models\Shop;
 use Illuminate\Http\Request;
 use App\Http\Controllers\GuideController;
 use Facade\FlareClient\Stacktrace\File;

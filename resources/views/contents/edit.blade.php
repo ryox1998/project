@@ -1,4 +1,4 @@
-@extends('layouts.main')
+@extends('layouts.show')
 @section('title', 'Edit')
 @section('content')
 
@@ -9,8 +9,10 @@
         </div>
     @endif
 
-
-    <h1>EDIT DATA</h1>
+    <br><br><br><br>
+    <div class="d-flex justify-content-center">
+    <section id="team" class="team section-bg col-sm-8 mt-6 ">
+    <h1>จัดการข้อมูล สถานที่ท่องเที่ยว</h1>
     <hr> <br>
     <form action="{{ route('contents.update', $content->id) }}" method="POST" enctype="multipart/form-data">
         @csrf
@@ -160,5 +162,9 @@
 
     </form>
     <div class="mt-5"></div>
+
+</section>
+</div>
+
 
 @endsection
