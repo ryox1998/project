@@ -24,9 +24,40 @@ class GuideController extends Controller
         $Latitude = $request->session()->get('Latitude');
         $Longitude = $request->session()->get('Longitude');
 
+        $type = "";
+        foreach ((array)$use_type as $value) {
+            $type = $type.$value;
+        }
 
-        $data['contents'] = Content::orderBy('id','desc')->simplePaginate(3);
-        return view('guide.show',$data,compact('use_people','use_day','use_km','Latitude','Longitude'));
+        if ($type == "ด้านธรรมชาติ") {
+            return dd('A');
+        }
+        else if ($type == "ด้านวัฒนธรรมประเพณีวิถีชีวิต") {
+            return dd('B');
+        }
+
+        else if ($type == "ด้านสิ่งที่มนุษย์สร้างขึ้น") {
+            return dd('C');
+        }
+
+        else if ($type == "ด้านธรรมชาติด้านวัฒนธรรมประเพณีวิถีชีวิต") {
+            return dd('A & B');
+        }
+
+        else if ($type == "ด้านธรรมชาติด้านสิ่งที่มนุษย์สร้างขึ้น") {
+            return dd('A & C');
+        }
+
+        else if ($type == "ด้านธรรมชาติด้านวัฒนธรรมประเพณีวิถีชีวิตด้านสิ่งที่มนุษย์สร้างขึ้น") {
+            return dd('A & B & C');
+        }
+
+        else if ($type == "ด้านวัฒนธรรมประเพณีวิถีชีวิตด้านสิ่งที่มนุษย์สร้างขึ้น") {
+            return dd('B & C');
+        }
+
+
+        // return view('guide.show',$data,compact('use_people','use_day','use_km','Latitude','Longitude'));
 
         // return dd($use_people,$use_type,$use_day,$use_km,$Latitude,$Longitude);
     }
