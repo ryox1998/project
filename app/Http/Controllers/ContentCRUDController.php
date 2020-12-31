@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 use App\Models\Content;
+use App\Models\hotel;
 use Illuminate\Http\Request;
 use App\Http\Controllers\GuideController;
 use Facade\FlareClient\Stacktrace\File;
@@ -56,8 +57,8 @@ class ContentCRUDController extends Controller
             'name.required' => 'กรุณาใส่ชื่อสถานที่ด้วยครับ' ,
             'detail.required'=> 'กรุณาใส่รายละเอียด',
             'type.required' => 'กรุณาเลือกรูปแบบการท่องเที่ยว',
-            'lat.required' => 'กรุณาระบุ Lat',
-            'long.required' => 'กรุณาระบุ Long',
+            'lat.required' => 'กรุณาระบุ ละติจูด',
+            'long.required' => 'กรุณาระบุ ลองติจูด',
             'image.required' => 'กรุณาเลือกรูปภาพด้วยครับ',
         ]
 
@@ -93,7 +94,8 @@ class ContentCRUDController extends Controller
      */
     public function show(Content $content)
     {
-        return view('contents.show',compact('content'));
+        $h_data['hotels'] = hotel::orderBy('id','desc')->simplePaginate(3);
+        return view('contents.show',$h_data,compact('content'));
     }
 
 

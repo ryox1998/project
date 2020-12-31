@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ContentCRUDController;
 use App\Http\Controllers\GuideController;
+use App\Http\Controllers\HotelCRUDController;
 use App\Http\Controllers\AmpherController;
 use Illuminate\Support\Facades\Storage;
 /*
@@ -20,6 +21,7 @@ use Illuminate\Support\Facades\Storage;
 Route::get('/','App\Http\Controllers\ContentCRUDController@index');
 Route::resource('contents', ContentCRUDController::class);
 Route::resource('guide', GuideController::class);
+Route::resource('hotels', HotelCRUDController::class);
 Route::get('ampher/mueang_tak','App\Http\Controllers\AmpherController@mueang_tak');
 Route::get('ampher/ban_tak','App\Http\Controllers\AmpherController@ban_tak');
 Route::get('ampher/sam_ngao','App\Http\Controllers\AmpherController@sam_ngao');

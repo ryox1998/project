@@ -54,6 +54,7 @@
         <ul>
           <li class="active"><a href="{{ route('contents.index')}}">หน้าแรก</a></li>
           <li><a href="{{route('guide.create')}}">แนะนำสถานที่ท่องเที่ยว</a></li>
+          <li><a href="{{route('hotels.index')}}">ที่พัก/โรงแรม</a></li>
           <li class="drop-down"><a href="#">อำเภอ</a>
             <ul>
               <li><a href="{{ url('ampher/mueang_tak')}}">เมืองตาก</a></li>
@@ -69,13 +70,14 @@
           </li>
           <li class="drop-down"><a href="#">เจ้าหน้าที่</a>
             <ul>
-              <li><a href="{{route('contents.create')}}">เพิ่มข้อมูล</a></li>
+              <li><a href="{{route('contents.create')}}">เพิ่มข้อมูลสถานที่ท่องเที่ยว</a></li>
+              <li><a href="{{route('hotels.create')}}">เพิ่มข้อมูล ที่พัก/โรงแรม</a></li>
             </ul>
           </li>
 
         </ul>
       </nav><!-- .nav-menu -->
-      
+
     </div>
   </header><!-- End Header -->
 
