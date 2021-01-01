@@ -2,11 +2,13 @@
 @section('title', 'TAK Hotel')
 @section('content')
 
-    @if ($message = Session::get('success'))
-        <div class="alert alert-success">
-            <p>{{ $message }}</p>
-        </div>
-    @endif
+@if (session()->has('success'))
+
+<script>
+     swal("<?php echo session()->get('success'); ?>", "", "success");
+</script>
+
+@endif
 
     <!-- ======= Team Section ======= -->
     <section id="team" class="team section-bg mt-5">

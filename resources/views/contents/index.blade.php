@@ -2,11 +2,13 @@
 @section('title', 'TAK Travel')
 @section('content')
 
-    @if ($message = Session::get('success'))
-        <div class="alert alert-success">
-            <p>{{ $message }}</p>
-        </div>
-    @endif
+@if (session()->has('success'))
+
+<script>
+     swal("<?php echo session()->get('success'); ?>", "", "success");
+</script>
+
+@endif
 
     <!-- ======= Team Section ======= -->
     <section id="team" class="team section-bg mt-5">
@@ -44,16 +46,22 @@
                                             อัพเดทล่าสุด {{ $content->updated_at }} </p>
                                 <a href="{{ route('contents.show', $content->id) }}">อ่านเพิ่มเติม</a>
                             </div>
-                            <form align="right" class="mt-3 p-3" action="{{ route('contents.destroy', $content->id) }}"
+
+
+
+                            <form align="right" class="mt-3 p-3" action="{{route('contents.destroy', $content->id) }}"
                                 method="POST">
                                 <a href="{{ route('contents.edit', $content->id) }}"><img
                                         src="{{ asset('assets/img/edit.svg') }}" alt="" height="30px" width="30px"></a>
                                 @csrf
                                 @method('DELETE')
-                                <button onclick="return confirm('คุณต้องการลบ ใช่ หรือ ไม่')" class="myButton"> <img
+                                <button  class="myButton" onclick="return confirm('คุณต้องการลบ ใช่ หรือ ไม่')" > <img
                                         src="{{ asset('assets/img/delete.svg') }}" alt="" height="30px"
-                                        width="30px"></button>
+                                        width="30px"> </button>
                             </form>
+
+
+
                         </div>
                     </div>
                 @endforeach
@@ -62,10 +70,24 @@
         </div>
     </section><!-- End Team Section -->
 
-
-
-
-
-
-
+    {{-- <script>
+        function del() {
+            swal({
+                    title: "Are you sure?",
+                    text: "Once deleted, you will not be able to recover this imaginary file!",
+                    icon: "warning",
+                    buttons: ["Cancel", "Yes!"],
+                    dangerMode: true,
+                    })
+                    .then((willDelete) => {
+                    if (willDelete) {
+                        swal("Poof! Your imaginary file has been deleted!", {
+                        icon: "success",
+                        });
+                    } else {
+                        swal("Your imaginary file is safe!");
+                    }
+                    });
+            }
+    </script> --}}
 @endsection

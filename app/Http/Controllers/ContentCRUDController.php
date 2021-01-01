@@ -83,7 +83,7 @@ class ContentCRUDController extends Controller
         $content ->save();
 
         return redirect()->route('contents.index')
-        -> with('success','Content has been created successfully.');
+        ->with('success', 'Content has been created successfully.');
     }
 
 
@@ -168,7 +168,7 @@ class ContentCRUDController extends Controller
         $content ->long = $request->long;
         $content->save();
 
-        return redirect()->route('contents.index')->with('success','Contect updated successfuly.');
+        return redirect()->route('contents.index')->with('success','Content updated successfuly.');
     }
 
     /**
