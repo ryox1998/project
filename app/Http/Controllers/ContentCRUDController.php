@@ -147,6 +147,7 @@ class ContentCRUDController extends Controller
 
         $content = Content::find($id);
         if ($request->hasFile('image')){
+            Storage::delete($content->image);
             $request->validate(['image' => 'required|image|mimes:jpg,png,jpeg,gif,svg|max:2048',
             ]);
             $path = $request->file('image')->store('public/images');

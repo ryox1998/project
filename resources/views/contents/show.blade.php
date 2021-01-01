@@ -48,10 +48,8 @@
   // $lat1 = 17.241366919161337;
   // $lon1 = 98.9729376858265;
   //ใช้ทดสอบ
-
   $lat2 = $hotel->h_lat;
   $lon2 = $hotel->h_long;
-
   $theta = $lon1 - $lon2;
   $dist = sin(deg2rad($lat1)) * sin(deg2rad($lat2)) +  cos(deg2rad($lat1)) * cos(deg2rad($lat2)) * cos(deg2rad($theta));
   $dist = acos($dist);
@@ -61,7 +59,6 @@
    ?>
 
    @if ($km<5)
-
    <div class="col-lg-4 col-md-6 d-flex align-items-stretch">
       <div class="member">
           <img class="page-content" src="{{ asset('storage/'.$hotel->h_image) }}" height="154.89px"
@@ -82,9 +79,9 @@
   </div>
    @else
   <center>
-        <strong><p class="text-danger">ไม่มี ที่พัก/โรงแรมที่ไกล้เคียงท่าน ในรัศมี 5 Km.</p></strong>
+        <strong><p class="text-danger"> ไม่มี ที่พัก/โรงแรมที่ไกล้เคียงท่าน ในรัศมี 5 Km.</p></strong>
         <img src="{{ asset('assets/img/map.svg') }}" alt="" height="100px" width="100px">
-      </center>
+  </center>
    @endif
     @endforeach
   </div>
@@ -130,10 +127,11 @@
         </div>
     </div>
      @else
-    <center>
+        <center>
           <strong><p class="text-danger">ไม่มี ร้านค้า/ของฝากที่ไกล้เคียงท่าน ในรัศมี 5 Km.</p></strong>
           <img src="{{ asset('assets/img/map.svg') }}" alt="" height="100px" width="100px">
         </center>
+
      @endif
       @endforeach
     </div>
