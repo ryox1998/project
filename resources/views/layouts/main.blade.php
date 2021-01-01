@@ -39,6 +39,7 @@
   src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA5jDH1BL6_WnRSTJHx8BvJBr7V3YiHlT0&callback=initMap">
 </script>
 
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
 </head>
 <body >
 <!--
@@ -125,6 +126,7 @@
     <a href="#" class="back-to-top"><i class="icofont-simple-up"></i></a>
 
     <!-- Vendor JS Files -->
+
     <script src="{{ asset('assets/vendor/jquery/jquery.min.js') }}"></script>
     <script src="{{ asset('assets/vendor/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
     <script src="{{ asset('assets/vendor/jquery.easing/jquery.easing.min.js') }}"></script>
