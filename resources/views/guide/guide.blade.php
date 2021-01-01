@@ -62,7 +62,7 @@
                 {{-- Show Lat and Long --}}
                 <a class="col-sm-8 mt-4 pl-3 text-danger " href="#" rel="noreferrer" onclick="getLocation()"><img
                         src="{{ asset('assets/img/location.svg') }}" alt="" height="15px"
-                        width="15px"><U><small>คลิกเพื่อหาตำแหน่งปัจจุบันและกรุณารอซักครู่ !!</small></U></a>
+                        width="15px"><U><small><strong>คลิกเพื่อหาตำแหน่งปัจจุบันและกรุณารอซักครู่ !!</strong></small></U></a>
                 <p hidden class="mt-3 pl-3 text-primary" id="location"></p>
 
                 {{-- End Show Lat and Long --}}
