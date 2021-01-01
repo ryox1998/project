@@ -49,13 +49,12 @@
 
 
 
-                            <form align="right" class="mt-3 p-3" action="{{route('contents.destroy', $content->id) }}"
-                                method="POST">
+                            <form  align="right" id="cf" class="mt-3 p-3" action="{{route('contents.destroy', $content->id) }}"method="POST">
                                 <a href="{{ route('contents.edit', $content->id) }}"><img
                                         src="{{ asset('assets/img/edit.svg') }}" alt="" height="30px" width="30px"></a>
                                 @csrf
                                 @method('DELETE')
-                                <button  class="myButton" onclick="return confirm('คุณต้องการลบ ใช่ หรือ ไม่')" > <img
+                                <button type="button" class="myButton" onclick="return del()" > <img
                                         src="{{ asset('assets/img/delete.svg') }}" alt="" height="30px"
                                         width="30px"> </button>
                             </form>
@@ -70,24 +69,23 @@
         </div>
     </section><!-- End Team Section -->
 
-    {{-- <script>
-        function del() {
-            swal({
-                    title: "Are you sure?",
-                    text: "Once deleted, you will not be able to recover this imaginary file!",
+    <script>
+
+            function del() {
+                swal({
+                    title: "",
+                    text: "Are You Sure  ?",
                     icon: "warning",
-                    buttons: ["Cancel", "Yes!"],
+                    buttons: ['Cancel','Confirm'],
                     dangerMode: true,
-                    })
-                    .then((willDelete) => {
-                    if (willDelete) {
-                        swal("Poof! Your imaginary file has been deleted!", {
-                        icon: "success",
-                        });
+                }).then(function(isConfirm) {
+                    if (isConfirm) {
+                        document.getElementById("cf").submit();
                     } else {
-                        swal("Your imaginary file is safe!");
+                        swal("Cancel !" , "Come back to menu", "error");
                     }
-                    });
+                })
             }
-    </script> --}}
+</script>
+
 @endsection
