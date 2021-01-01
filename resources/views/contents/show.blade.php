@@ -37,17 +37,16 @@
 
   <!--The div element for the map -->
   <div  class="mt-5" id="map"></div>
-  <h5 class="title mt-5"> ● ที่พัก/โรงแรมที่ไกล้เคียง : </h5> <hr>
+  {{-- End map --}}
 
+
+  {{-- ที่พัก/โรงแรมที่ไกล้เคียง --}}
+  <h5 class="title mt-5"> ● ที่พัก/โรงแรมที่ไกล้เคียง : </h5> <hr>
   <div class="row">
     @foreach ($hotels as $hotel)
   <?php
   $lat1 = $content->lat ;
   $lon1 = $content->long;
-
-  // $lat1 = 17.241366919161337;
-  // $lon1 = 98.9729376858265;
-  //ใช้ทดสอบ
   $lat2 = $hotel->h_lat;
   $lon2 = $hotel->h_long;
   $theta = $lon1 - $lon2;
@@ -77,18 +76,22 @@
           </div>
       </div>
   </div>
+
    @else
-  <center>
-        <strong><p class="text-danger"> ไม่มี ที่พัก/โรงแรมที่ไกล้เคียงท่าน ในรัศมี 5 Km.</p></strong>
-        <img src="{{ asset('assets/img/map.svg') }}" alt="" height="100px" width="100px">
-  </center>
+   {{-- ไม่มีทีพัก --}}
+   <div class="col-lg-6 col-md-6 d-flex align-items-stretch">
+    <center><strong><p class="text-danger pl-3"><img src="{{ asset('assets/img/cancel.svg') }}" alt="" height="15px" width="15px">    ไม่มี ที่พัก/โรงแรมที่ไกล้เคียงท่าน ในรัศมี 5 Km. ขออภัยด้วยครับ </p></strong></center>
+    </div>
+    {{-- ไม่มีทีพัก --}}
+        @break
    @endif
     @endforeach
   </div>
 
+  {{-- ที่พัก/โรงแรมที่ไกล้เคียง --}}
+
 
   <h5 class="title mt-5"> ● ร้านค้า/ของฝากที่ไกล้เคียง : </h5> <hr>
-
   <div class="row">
       @foreach ($shops as $shop)
     <?php
@@ -107,7 +110,6 @@
      ?>
 
      @if ($km<5)
-
      <div class="col-lg-4 col-md-6 d-flex align-items-stretch">
         <div class="member">
             <img class="page-content" src="{{ asset('storage/'.$shop->s_image) }}" height="154.89px"
@@ -127,16 +129,13 @@
         </div>
     </div>
      @else
-        <center>
-          <strong><p class="text-danger">ไม่มี ร้านค้า/ของฝากที่ไกล้เคียงท่าน ในรัศมี 5 Km.</p></strong>
-          <img src="{{ asset('assets/img/map.svg') }}" alt="" height="100px" width="100px">
-        </center>
-
+     <div class="col-lg-6 col-md-6 d-flex align-items-stretch">
+        <center><strong><p class="text-danger pl-3"><img src="{{ asset('assets/img/cancel.svg') }}" alt="" height="15px" width="15px">    ไม่มี ร้านค้า/ของฝากที่ไกล้เคียงท่าน ในรัศมี 5 Km. ขออภัยด้วยครับ </p></strong></center>
+     </div>
+     @break
      @endif
       @endforeach
     </div>
-
-
 
   <hr>
   <center><h6 class="mt-3"> <strong> Tag : {{$content->people}} @foreach ((array)$content->type as $value) , {{$value}} @endforeach </strong> </h6></center>
