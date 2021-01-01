@@ -121,6 +121,7 @@ class HotelCRUDController extends Controller
 
             $hotel = hotel::find($id);
             if ($request->hasFile('h_image')){
+                Storage::delete($hotel->h_image);
                 $request->validate(['h_image' => 'required|image|mimes:jpg,png,jpeg,gif,svg|max:2048',
                 ]);
                 $path = $request->file('h_image')->store('public/images');

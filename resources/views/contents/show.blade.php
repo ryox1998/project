@@ -138,7 +138,7 @@
     </div>
 
   <hr>
-  <center><h6 class="mt-3"> <strong> Tag : {{$content->people}} @foreach ((array)$content->type as $value) , {{$value}} @endforeach </strong> </h6></center>
+  <center><h6 class="mt-3"> <strong> <img src="{{ asset('assets/img/human.svg') }}" alt="" height="30px" width="30px">  Tag : {{$content->people}} @foreach ((array)$content->type as $value) , {{$value}} @endforeach </strong> </h6></center>
 </section>
 
 

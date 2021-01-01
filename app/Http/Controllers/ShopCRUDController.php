@@ -120,6 +120,7 @@ class ShopCRUDController extends Controller
 
             $shop = Shop::find($id);
             if ($request->hasFile('s_image')){
+                Storage::delete($shop->s_image);
                 $request->validate(['s_image' => 'required|image|mimes:jpg,png,jpeg,gif,svg|max:2048',
                 ]);
                 $path = $request->file('s_image')->store('public/images');
