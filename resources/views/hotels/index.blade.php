@@ -46,13 +46,13 @@
                                             อัพเดทล่าสุด {{ $hotel->updated_at }} </p>
                                 <a href="{{ route('hotels.show', $hotel->id) }}">อ่านเพิ่มเติม</a>
                             </div>
-                            <form align="right" class="mt-3 p-3" action="{{ route('hotels.destroy', $hotel->id) }}"
+                            <form align="right" id="cf" class="mt-3 p-3" action="{{ route('hotels.destroy', $hotel->id) }}"
                                 method="POST">
                                 <a href="{{ route('hotels.edit', $hotel->id) }}"><img
                                         src="{{ asset('assets/img/edit.svg') }}" alt="" height="30px" width="30px"></a>
                                 @csrf
                                 @method('DELETE')
-                                <button onclick="return confirm('คุณต้องการลบ ใช่ หรือ ไม่')" class="myButton"> <img
+                                <button type="button" onclick="return del()" class="myButton"> <img
                                         src="{{ asset('assets/img/delete.svg') }}" alt="" height="30px"
                                         width="30px"></button>
                             </form>
@@ -65,7 +65,23 @@
     </section><!-- End Team Section -->
 
 
-
+    <script>
+        function del() {
+            swal({
+                title: "",
+                text: "คุณต้องการลบเนื้อหาในส่วนนี้ใช่ไหม  ?",
+                icon: "warning",
+                buttons: ['ยกเลิก','ยืนยัน'],
+                dangerMode: true,
+            }).then(function(isConfirm) {
+                if (isConfirm) {
+                    document.getElementById("cf").submit();
+                } else {
+                    swal("ยกเลิก !" , "กลับมายังหน้าเดิม", "error");
+                }
+            })
+        }
+</script>
 
 
 

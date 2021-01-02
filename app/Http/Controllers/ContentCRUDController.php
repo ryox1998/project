@@ -83,7 +83,7 @@ class ContentCRUDController extends Controller
         $content ->save();
 
         return redirect()->route('contents.index')
-        ->with('success', 'Content has been created successfully.');
+        ->with('success', 'บันทึกรายการ สถานที่ท่องเที่ยว สำเร็จ !!');
     }
 
 
@@ -168,7 +168,7 @@ class ContentCRUDController extends Controller
         $content ->long = $request->long;
         $content->save();
 
-        return redirect()->route('contents.index')->with('success','Content updated successfuly.');
+        return redirect()->route('contents.index')->with('success','อัพเดท สถานที่ท่องเที่ยว สำเร็จ !!');
     }
 
     /**
@@ -183,7 +183,7 @@ class ContentCRUDController extends Controller
         Storage::delete($content->image);
         $content->delete();
         return redirect()->route('contents.index')
-                        ->with('success','Content has been deleted successfully');
+                        ->with('success','ลบรายการ สถานที่ท่องเที่ยว สำเร็จ !!');
     }
 
 }

@@ -70,22 +70,21 @@
     </section><!-- End Team Section -->
 
     <script>
-
-            function del() {
-                swal({
-                    title: "",
-                    text: "Are You Sure  ?",
-                    icon: "warning",
-                    buttons: ['Cancel','Confirm'],
-                    dangerMode: true,
-                }).then(function(isConfirm) {
-                    if (isConfirm) {
-                        document.getElementById("cf").submit();
-                    } else {
-                        swal("Cancel !" , "Come back to menu", "error");
-                    }
-                })
-            }
+        function del() {
+            swal({
+                title: "",
+                text: "คุณต้องการลบเนื้อหาในส่วนนี้ใช่ไหม  ?",
+                icon: "warning",
+                buttons: ['ยกเลิก','ยืนยัน'],
+                dangerMode: true,
+            }).then(function(isConfirm) {
+                if (isConfirm) {
+                    document.getElementById("cf").submit();
+                } else {
+                    swal("ยกเลิก !" , "กลับมายังหน้าเดิม", "error");
+                }
+            })
+        }
 </script>
 
 @endsection

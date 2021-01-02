@@ -68,7 +68,7 @@ class HotelCRUDController extends Controller
         $hotel ->save();
 
         return redirect()->route('hotels.index')
-        -> with('success','Hotels has been created successfully.');
+        -> with('success','บันทึกรายการ ที่พัก/โรงแรม สำเร็จ !!');
 
     }
 
@@ -135,7 +135,7 @@ class HotelCRUDController extends Controller
             $hotel ->h_long = $request->h_long;
             $hotel ->save();
 
-            return redirect()->route('hotels.index')->with('success','Hotels updated successfuly.');
+            return redirect()->route('hotels.index')->with('success','อัพเดทรายการ ที่พัก/โรงแรม สำเร็จ !!');
         }
     }
 
@@ -150,6 +150,6 @@ class HotelCRUDController extends Controller
         Storage::delete($hotel->h_image);
         $hotel->delete();
         return redirect()->route('hotels.index')
-                        ->with('success','Hotels has been deleted successfully');
+                        ->with('success','ลบรายการ ที่พัก/โรงแรม สำเร็จ !!');
     }
 }

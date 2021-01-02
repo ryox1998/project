@@ -67,7 +67,7 @@ class ShopCRUDController extends Controller
         $shop ->save();
 
         return redirect()->route('shops.index')
-        -> with('success','Shops has been created successfully.');
+        -> with('success','บันทึกรายการ ร้านค้า/ของฝาก สำเร็จ !!');
 
     }
 
@@ -134,7 +134,7 @@ class ShopCRUDController extends Controller
             $shop ->s_long = $request->s_long;
             $shop ->save();
 
-            return redirect()->route('shops.index')->with('success','Shops updated successfuly.');
+            return redirect()->route('shops.index')->with('success','อัพเดทรายการ ร้านค้า/ของฝาก สำเร็จ !!');
         }
     }
 
@@ -149,6 +149,6 @@ class ShopCRUDController extends Controller
         Storage::delete($shop->s_image);
         $shop->delete();
         return redirect()->route('shops.index')
-                        ->with('success','Shops has been deleted successfully');
+                        ->with('success','ลบรายการ ร้านค้า/ของฝาก สำเร็จ !!');
     }
 }
