@@ -118,15 +118,13 @@ class HotelCRUDController extends Controller
             'h_name'=> 'required',
             'h_detail' => 'required',
             'h_lat'=> 'required',
-            'h_long'=> 'required',
-            'h_image' => 'required|image|mimes:jpg,png,jpeg,gif,svg|max:2048',],
+            'h_long'=> 'required',],
 
             [
                 'h_name.required' => 'กรุณาใส่ชื่อ ที่พัก/โรงแรมด้วยครับ' ,
                 'h_detail.required'=> 'กรุณาใส่รายละเอียด',
                 'h_lat.required' => 'กรุณาระบุ ละติจูด',
                 'h_long.required' => 'กรุณาระบุ ลองติจูด',
-                'h_image.required' => 'กรุณาเลือกรูปภาพด้วยครับ',
             ]);
 
 

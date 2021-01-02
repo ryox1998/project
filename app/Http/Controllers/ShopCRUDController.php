@@ -118,15 +118,13 @@ class ShopCRUDController extends Controller
             's_name'=> 'required',
             's_detail' => 'required',
             's_lat'=> 'required',
-            's_long'=> 'required',
-            's_image' => 'required|image|mimes:jpg,png,jpeg,gif,svg|max:2048',],
+            's_long'=> 'required',],
 
             [
                 's_name.required' => 'กรุณาใส่ชื่อ ร้านค้า/ของฝาก ด้วยครับ' ,
                 's_detail.required'=> 'กรุณาใส่รายละเอียด',
                 's_lat.required' => 'กรุณาระบุ ละติจูด',
                 's_long.required' => 'กรุณาระบุ ลองติจูด',
-                's_image.required' => 'กรุณาเลือกรูปภาพด้วยครับ',
             ]);
 
 

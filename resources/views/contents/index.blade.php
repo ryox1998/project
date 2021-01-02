@@ -38,10 +38,8 @@
                             <hr> <br>
                             <p class="a">{{ $content->detail }}</p>
                             <div class="social">
-                                <a href="https://www.facebook.com/taktravel" target="_blank"><i
-                                        class="icofont-facebook"></i></a>
-                                <a href="https://www.instagram.com/taktravel/" target="_blank"><i
-                                        class="icofont-instagram"></i></a>
+                                <a href="https://www.facebook.com/taktravel" target="_blank"><i class="icofont-facebook"></i></a>
+                                <a href="https://www.instagram.com/taktravel/" target="_blank"><i class="icofont-instagram"></i></a>
                                         <p> เขียนเมื่อ {{ $content->created_at }} <br>
                                             อัพเดทล่าสุด {{ $content->updated_at }} </p>
                                 <a href="{{ route('contents.show', $content->id) }}">อ่านเพิ่มเติม</a>
@@ -56,8 +54,6 @@
                                         src="{{ asset('assets/img/delete.svg') }}" alt="" height="30px"
                                         width="30px"> </button>
                             </form>
-
-
 
                         </div>
                     </div>

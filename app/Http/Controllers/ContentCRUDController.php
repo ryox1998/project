@@ -142,8 +142,7 @@ class ContentCRUDController extends Controller
         'people'=> 'required',
         'day'=> 'required',
         'lat'=> 'required',
-        'long'=> 'required',
-        'image' => 'required|image|mimes:jpg,png,jpeg,gif,svg|max:2048',]
+        'long'=> 'required',]
         ,
 
         [
@@ -152,11 +151,11 @@ class ContentCRUDController extends Controller
             'type.required' => 'กรุณาเลือกรูปแบบการท่องเที่ยว',
             'lat.required' => 'กรุณาระบุ Lat',
             'long.required' => 'กรุณาระบุ Long',
-            'image.required' => 'กรุณาเลือกรูปภาพด้วยครับ',
         ]);
 
 
         $content = Content::find($id);
+
         if ($request->hasFile('image')){
             if ($content->image != 'nopic.jpg') {
                 File::delete(public_path() . '\\assets\\images\\' . $content->image);

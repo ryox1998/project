@@ -7,7 +7,7 @@
             <h1 class="col-sm-8 mt-5">แนะนำสถานที่ท่องเที่ยว</h1>
             <form method="POST" action="{{ route('guide.store') }}" enctype="multipart/form-data">
                 @csrf
-                <div class="col-sm-6 mt-3">
+                <div class="col-12 col-md-6 mt-3">
                     <label for="use_people">มาเที่ยวกี่คน</label>
                     <select class="form-control" name="use_people">
                         <option>เที่ยวเดี่ยว</option>
@@ -18,16 +18,16 @@
                 </div>
                 <br>
 
-                <p class="col-sm-6">รูปแบบการท่องเที่ยว</p>
-                <div class="col-sm-6 pl-5">
+                <p class="col-12 col-md-6">รูปแบบการท่องเที่ยว</p>
+                <div class="col-12 col-md-6 pl-5">
                     <input class="form-check-input" type="checkbox" name="use_type[]" value="ด้านธรรมชาติ">
                     <label class="form-check-label">ด้านธรรมชาติ</label>
                 </div>
-                <div class="col-sm-6 pl-5">
+                <div class="col-12 col-md-6 pl-5">
                     <input class="form-check-input" type="checkbox" name="use_type[]" value="ด้านวัฒนธรรมประเพณีวิถีชีวิต">
                     <label class="form-check-label">ด้านวัฒนธรรมประเพณีวิถีชีวิต</label>
                 </div>
-                <div class="col-sm-6 pl-5">
+                <div class="col-12 col-md-6 pl-5">
                     <input class="form-check-input" type="checkbox" name="use_type[]" value="ด้านสิ่งที่มนุษย์สร้างขึ้น">
                     <label class="form-check-label">ด้านสิ่งที่มนุษย์สร้างขึ้น</label>
                 </div>
@@ -36,7 +36,7 @@
                     <div class="alert alert-danger mb-1 mt-1">{{ $message }}</div>
                 @enderror
 
-                <div class="col-sm-6">
+                <div class="col-12 col-md-6">
                     <br>
                     <label for="use_day">ระยะเวลาในการเที่ยว</label>
                     <select class="form-control" name="use_day">
@@ -47,7 +47,7 @@
                         <option value="5 วัน">5 วันขึ้นไป</option>
                     </select>
                 </div>
-                <div class="col-sm-6">
+                <div class="col-12 col-md-6">
                     <label for="use_km">ระยะทางในการเดินทาง</label>
                     <select class="form-control" name="use_km">
                         <option value="10">ช่วง 10 Km.</option>
@@ -68,7 +68,7 @@
                 {{-- End Show Lat and Long --}}
 
                 {{-- input Latitude --}}
-                <div class="input-group col-sm-6 ">
+                <div class="input-group col-12 col-md-6 ">
                     <div class="input-group-prepend">
                         <span class="input-group-text" id="num">ละติจูด</span>
                     </div>
@@ -82,7 +82,7 @@
 
 
                 {{-- input Longitude --}}
-                <div class="input-group col-sm-6 mt-3">
+                <div class="input-group col-12 col-md-6 mt-3">
                     <div class="input-group-prepend">
                         <span class="input-group-text" id="num">ลองติจูด</span>
                     </div>

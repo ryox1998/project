@@ -19,7 +19,7 @@
 
     <div class="form-group">
         <label for="detail">รายละเอียด :</label>
-        <textarea class="form-control" name="detail" rows="3" placeholder="กรอก รายละเอียด"></textarea>
+        <textarea class="form-control"  name="detail" rows="3" placeholder="กรอก รายละเอียด"></textarea>
         @error('detail')
         <div class="alert alert-danger mb-1 mt-1">{{$message}}</div>
         @enderror
@@ -125,6 +125,13 @@
   <div class="mt-5"></div>
 </section>
 </div>
+
+
+<script>
+    $(document).ready(function() {
+       $('.ckeditor').ckeditor();
+    });
+</script>
 
 
 @endsection

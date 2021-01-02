@@ -139,8 +139,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.2/sweetalert.min.js"></script>
     <!-- Template Main JS File -->
     <script src="{{asset('assets/js/main.js')}}"></script>
-
-
+    <script src="cdn.ckeditor.com/4.15.1/standard/ckeditor.js" ></script>
 
     </body>
     </html>

@@ -2,23 +2,7 @@
 @section('title','Show')
 @section('content')
 
-<script>
-    // Initialize and add the map
-    function initMap() {
-      // The location of Uluru
-      const uluru = { lat: {{$content->lat}}, lng: {{ $content->long }} };
-      // The map, centered at Uluru
-      const map = new google.maps.Map(document.getElementById("map"), {
-        zoom: 15,
-        center: uluru,
-      });
-      // The marker, positioned at Uluru
-      const marker = new google.maps.Marker({
-        position: uluru,
-        map: map,
-      });
-    }
-  </script>
+
 
 
 
@@ -31,9 +15,7 @@
     <h5>อำเภอ {{$content->ampher}}</h5>
   </div>
   <h5 class="title mt-3"> ● รายละเอียด : </h5> <hr>
-  <p class="text-justify b mt-3">
-    {{($content->detail)}}
-  </p>
+  <p class="text-justify b mt-3"> {{ $content->detail}} </p>
 
   <!--The div element for the map -->
   <div  class="mt-5" id="map"></div>
@@ -43,7 +25,9 @@
   {{-- ที่พัก/โรงแรมที่ไกล้เคียง --}}
   <h5 class="title mt-5"> ● ที่พัก/โรงแรมที่ไกล้เคียง : </h5> <hr>
   <div class="row">
+
     @foreach ($hotels as $hotel)
+    
   <?php
   $lat1 = $content->lat ;
   $lon1 = $content->long;
@@ -55,6 +39,7 @@
   $dist = rad2deg($dist);
   $miles = $dist * 60 * 1.1515;
   $km = $miles * 1.609344 ;
+
    ?>
 
    @if ($km<5)
@@ -141,5 +126,24 @@
   <center><h6 class="mt-3"> <strong> <img src="{{ asset('assets/img/human.svg') }}" alt="" height="30px" width="30px">  Tag : {{$content->people}} @foreach ((array)$content->type as $value) , {{$value}} @endforeach </strong> </h6></center>
 </section>
 
+
+<script>
+  // Initialize and add the map
+  function initMap() {
+    // The location of Uluru
+    const uluru = { lat: {{$content->lat}}, lng: {{ $content->long }} };
+    // The map, centered at Uluru
+    const map = new google.maps.Map(document.getElementById("map"), {
+      zoom: 15,
+      center: uluru,
+    });
+    // The marker, positioned at Uluru
+    const marker = new google.maps.Marker({
+      position: uluru,
+      map: map,
+    });
+  }
+
+</script>
 
 @endsection

@@ -167,4 +167,11 @@
 </div>
 
 
+<script>
+    $(document).ready(function() {
+       $('.ckeditor').ckeditor();
+    });
+</script>
+
+
 @endsection
