@@ -72,6 +72,7 @@
           </li>
           <li class="drop-down"><a href="#">เจ้าหน้าที่</a>
             <ul>
+              {{-- <li><a href="{{route('loginweb.index')}}">เข้าสู่ระบบ</a></li> --}}
               <li><a href="{{route('contents.create')}}">เพิ่มข้อมูล สถานที่ท่องเที่ยว</a></li>
               <li><a href="{{route('hotels.create')}}">เพิ่มข้อมูล ที่พัก/โรงแรม</a></li>
               <li><a href="{{route('shops.create')}}">เพิ่มข้อมูล ร้านอาหาร/ของฝาก</a></li>

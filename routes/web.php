@@ -7,6 +7,7 @@ use App\Http\Controllers\HotelCRUDController;
 use App\Http\Controllers\ShopCRUDController;
 use App\Http\Controllers\AmpherController;
 use Illuminate\Support\Facades\Storage;
+use App\Http\Controllers\LoginController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -17,7 +18,6 @@ use Illuminate\Support\Facades\Storage;
 | contains the "web" middleware group. Now create something great!
 |
 */
-
 
 Route::get('/','App\Http\Controllers\ContentCRUDController@index');
 Route::resource('contents', ContentCRUDController::class);
