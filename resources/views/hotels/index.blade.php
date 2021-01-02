@@ -29,7 +29,7 @@
                         <div class="member">
                             <img class="position-absolute" src="{{ asset('assets/img/newl.svg') }}" height="45px"
                                 width="45px">
-                            <img class="page-content" src="{{ asset('storage/'.$hotel->h_image) }}" height="154.89px"
+                            <img class="page-content" src="{{ asset('assets/images/'.$hotel->h_image) }}" height="154.89px"
                                 width="275px" />
                             <a href="{{ route('hotels.show', $hotel->id) }}">
                                 <h4> {{ $hotel->h_name }}</h4>

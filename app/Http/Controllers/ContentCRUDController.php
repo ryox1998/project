@@ -6,9 +6,11 @@ use App\Models\hotel;
 use App\Models\Shop;
 use Illuminate\Http\Request;
 use App\Http\Controllers\GuideController;
-use Facade\FlareClient\Stacktrace\File;
-use Illuminate\Support\Facades\Storage;
 use function PHPSTORM_META\type;
+use Illuminate\Support\Str;
+use Illuminate\Support\Facades\File;
+
+
 
 class ContentCRUDController extends Controller
 {
@@ -52,7 +54,8 @@ class ContentCRUDController extends Controller
         'day'=> 'required',
         'lat'=> 'required',
         'long'=> 'required',
-        'image' => 'required|image|mimes:jpg,png,jpeg,gif,svg|max:2048',],
+        'image' => 'required|image|mimes:jpg,png,jpeg,gif,svg|max:2048',]
+        ,
 
         [
             'name.required' => 'กรุณาใส่ชื่อสถานที่ด้วยครับ' ,
@@ -64,10 +67,17 @@ class ContentCRUDController extends Controller
         ]
 
     );
-
-
-        $path = $request->file('image')->store('public/images');
+        // $path = $request->file('image')->store('public/images');
         $content = new Content;
+
+        if ($request->hasFile('image')) {
+            $path = Str::random(10) . '.' . $request->file('image')->getClientOriginalExtension();
+            $request->file('image')->move(public_path() . '/assets/images/', $path);
+            $content->image = $path;
+            } else {
+                $content->image = 'no_img.png';
+            }
+
         $content ->name = $request->name;
         $content ->detail = $request->detail;
         $content ->ampher = $request->ampher;
@@ -78,12 +88,11 @@ class ContentCRUDController extends Controller
         $content ->day = $request->day;
         $content ->lat = $request->lat;
         $content ->long = $request->long;
-        $content->image = $path;
-
+        // $content->image = $path;
         $content ->save();
 
         return redirect()->route('contents.index')
-        ->with('success', 'บันทึกรายการ สถานที่ท่องเที่ยว สำเร็จ !!');
+        ->with('success', 'บันทึกรายการ สถานที่ท่องเที่ยว สำเร็จ');
     }
 
 
@@ -133,7 +142,9 @@ class ContentCRUDController extends Controller
         'people'=> 'required',
         'day'=> 'required',
         'lat'=> 'required',
-        'long'=> 'required',] ,
+        'long'=> 'required',
+        'image' => 'required|image|mimes:jpg,png,jpeg,gif,svg|max:2048',]
+        ,
 
         [
             'name.required' => 'กรุณาใส่ชื่อสถานที่ด้วยครับ' ,
@@ -147,14 +158,13 @@ class ContentCRUDController extends Controller
 
         $content = Content::find($id);
         if ($request->hasFile('image')){
-            Storage::delete($content->image);
-            $request->validate(['image' => 'required|image|mimes:jpg,png,jpeg,gif,svg|max:2048',
-            ]);
-            $path = $request->file('image')->store('public/images');
+            if ($content->image != 'nopic.jpg') {
+                File::delete(public_path() . '\\assets\\images\\' . $content->image);
+                }
+            $path = Str::random(10) . '.' . $request->file('image')->getClientOriginalExtension();
+            $request->file('image')->move(public_path() . '/assets/images/', $path);
             $content->image = $path;
         }
-
-
 
         $content ->name = $request->name;
         $content ->detail = $request->detail;
@@ -168,7 +178,7 @@ class ContentCRUDController extends Controller
         $content ->long = $request->long;
         $content->save();
 
-        return redirect()->route('contents.index')->with('success','อัพเดท สถานที่ท่องเที่ยว สำเร็จ !!');
+        return redirect()->route('contents.index')->with('success','อัพเดท สถานที่ท่องเที่ยว สำเร็จ');
     }
 
     /**
@@ -180,10 +190,13 @@ class ContentCRUDController extends Controller
     public function destroy(Content $content)
     {
 
-        Storage::delete($content->image);
+        if ($content->image != 'nopic.jpg') {
+            File::delete(public_path() . '\\assets\\images\\' . $content->image);
+            }
+
         $content->delete();
         return redirect()->route('contents.index')
-                        ->with('success','ลบรายการ สถานที่ท่องเที่ยว สำเร็จ !!');
+                        ->with('success','ลบรายการ สถานที่ท่องเที่ยว สำเร็จ');
     }
 
 }

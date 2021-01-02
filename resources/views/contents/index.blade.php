@@ -29,7 +29,7 @@
                         <div class="member">
                             <img class="position-absolute" src="{{ asset('assets/img/newl.svg') }}" height="45px"
                                 width="45px">
-                            <img class="page-content" src="{{ asset('storage/'.$content->image) }}" height="154.89px"
+                            <img class="page-content" src="{{ asset('assets/images/'.$content->image) }}" height="154.89px"
                                 width="275px" />
                             <a href="{{ route('contents.show', $content->id) }}">
                                 <h4> {{ $content->name }}</h4>
@@ -46,8 +46,6 @@
                                             อัพเดทล่าสุด {{ $content->updated_at }} </p>
                                 <a href="{{ route('contents.show', $content->id) }}">อ่านเพิ่มเติม</a>
                             </div>
-
-
 
                             <form  align="right" id="cf" class="mt-3 p-3" action="{{route('contents.destroy', $content->id) }}"method="POST">
                                 <a href="{{ route('contents.edit', $content->id) }}"><img

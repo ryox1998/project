@@ -22,7 +22,7 @@
 
 <section id="team" class="team section-bg mt-5">
     <div class="container">
-        <div align="center"> <img src="{{ asset('storage/'.$shop->s_image) }}" height="100%" width="100%" alt="" /></div>
+        <div align="center"> <img src="{{ asset('assets/images/'.$shop->s_image) }}" height="100%" width="100%" alt="" /></div>
     </div>
   <div class="section-title ">
     <h2>{{($shop->shop_name)}}</h2>

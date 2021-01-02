@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\hotel;
 use Illuminate\Support\Facades\Storage;
+use Illuminate\Support\Str;
+use Illuminate\Support\Facades\File;
 
 class HotelCRUDController extends Controller
 {
@@ -57,18 +59,26 @@ class HotelCRUDController extends Controller
 
     );
 
-        $path = $request->file('h_image')->store('public/images');
+
         $hotel = new hotel;
+        if ($request->hasFile('h_image')) {
+            $path = Str::random(10) . '.' . $request->file('h_image')->getClientOriginalExtension();
+            $request->file('h_image')->move(public_path() . '/assets/images/', $path);
+            $hotel->h_image = $path;
+            }
+        else {
+                $hotel->h_image = 'no_img.png';
+            }
+
         $hotel ->h_name = $request->h_name;
         $hotel ->h_detail = $request->h_detail;
         $hotel ->h_ampher = $request->h_ampher;
         $hotel ->h_lat = $request->h_lat;
         $hotel ->h_long = $request->h_long;
-        $hotel->h_image = $path;
         $hotel ->save();
 
         return redirect()->route('hotels.index')
-        -> with('success','บันทึกรายการ ที่พัก/โรงแรม สำเร็จ !!');
+        -> with('success','บันทึกรายการ ที่พัก/โรงแรม สำเร็จ');
 
     }
 
@@ -108,7 +118,8 @@ class HotelCRUDController extends Controller
             'h_name'=> 'required',
             'h_detail' => 'required',
             'h_lat'=> 'required',
-            'h_long'=> 'required',] ,
+            'h_long'=> 'required',
+            'h_image' => 'required|image|mimes:jpg,png,jpeg,gif,svg|max:2048',],
 
             [
                 'h_name.required' => 'กรุณาใส่ชื่อ ที่พัก/โรงแรมด้วยครับ' ,
@@ -121,10 +132,11 @@ class HotelCRUDController extends Controller
 
             $hotel = hotel::find($id);
             if ($request->hasFile('h_image')){
-                Storage::delete($hotel->h_image);
-                $request->validate(['h_image' => 'required|image|mimes:jpg,png,jpeg,gif,svg|max:2048',
-                ]);
-                $path = $request->file('h_image')->store('public/images');
+                if ($hotel->h_image != 'nopic.jpg') {
+                    File::delete(public_path() . '\\assets\\images\\' . $hotel->h_image);
+                    }
+                $path = Str::random(10) . '.' . $request->file('h_image')->getClientOriginalExtension();
+                $request->file('h_image')->move(public_path() . '/assets/images/', $path);
                 $hotel->h_image = $path;
             }
 
@@ -135,7 +147,7 @@ class HotelCRUDController extends Controller
             $hotel ->h_long = $request->h_long;
             $hotel ->save();
 
-            return redirect()->route('hotels.index')->with('success','อัพเดทรายการ ที่พัก/โรงแรม สำเร็จ !!');
+            return redirect()->route('hotels.index')->with('success','อัพเดทรายการ ที่พัก/โรงแรม สำเร็จ');
         }
     }
 
@@ -147,9 +159,12 @@ class HotelCRUDController extends Controller
      */
     public function destroy(hotel $hotel)
     {
-        Storage::delete($hotel->h_image);
+
+    if ($hotel->h_image != 'nopic.jpg') {
+    File::delete(public_path() . '\\assets\\images\\' . $hotel->h_image);
+    }
         $hotel->delete();
         return redirect()->route('hotels.index')
-                        ->with('success','ลบรายการ ที่พัก/โรงแรม สำเร็จ !!');
+                        ->with('success','ลบรายการ ที่พัก/โรงแรม สำเร็จ');
     }
 }

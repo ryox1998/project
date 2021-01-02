@@ -24,7 +24,7 @@
 
 <section id="team" class="team section-bg mt-5">
     <div class="container">
-        <div align="center"> <img src="{{ asset('storage/'.$content->image) }}" height="100%" width="100%" alt="" /></div>
+        <div align="center"> <img src="{{ asset('assets/images/'.$content->image) }}" height="100%" width="100%" alt="" /></div>
     </div>
   <div class="section-title ">
     <h2>{{($content->name)}}</h2>
@@ -60,7 +60,7 @@
    @if ($km<5)
    <div class="col-lg-4 col-md-6 d-flex align-items-stretch">
       <div class="member">
-          <img class="page-content" src="{{ asset('storage/'.$hotel->h_image) }}" height="154.89px"
+          <img class="page-content" src="{{ asset('assets/images/'.$hotel->h_image) }}" height="154.89px"
               width="275px" />
           <a href="{{ route('hotels.show', $hotel->id) }}">
               <h4> {{ $hotel->h_name }}</h4>
@@ -112,7 +112,7 @@
      @if ($km<5)
      <div class="col-lg-4 col-md-6 d-flex align-items-stretch">
         <div class="member">
-            <img class="page-content" src="{{ asset('storage/'.$shop->s_image) }}" height="154.89px"
+            <img class="page-content" src="{{ asset('assets/images/'.$shop->s_image) }}" height="154.89px"
                 width="275px" />
             <a href="{{ route('shops.show', $shop->id) }}">
                 <h4> {{ $shop->s_name }}</h4>
