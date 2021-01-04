@@ -27,7 +27,7 @@
   <div class="row">
 
     @foreach ($hotels as $hotel)
-    
+
   <?php
   $lat1 = $content->lat ;
   $lon1 = $content->long;
