@@ -15,11 +15,10 @@
         <div class="container">
 
             <div class="section-title">
-                <span>โรงแรม ใหม่ที่แนะนำ</span>
-                <h2>โรงแรม  ใหม่ที่แนะนำ</h2>
+                <span>ที่พัก/โรงแรม</span>
+                <h2>ที่พัก/โรงแรม</h2>
                 <p>
-
-                    Lorem ipsum dolor sit amet.
+                    ตาก จังหวัดเล็กๆ ที่เต็มไปด้วยมนต์เสน่ห์อันน่าหลงใหล ...
                 </p>
             </div>
             <div class="row">
@@ -27,8 +26,8 @@
                     <div class="col-lg-4 col-md-6 d-flex align-items-stretch">
 
                         <div class="member">
-                            <img class="position-absolute" src="{{ asset('assets/img/newl.svg') }}" height="45px"
-                                width="45px">
+                            {{-- <img class="position-absolute" src="{{ asset('assets/img/newl.svg') }}" height="45px"
+                                width="45px"> --}}
                             <img class="page-content" src="{{ asset('assets/images/'.$hotel->h_image) }}" height="154.89px"
                                 width="275px" />
                             <a href="{{ route('hotels.show', $hotel->id) }}">

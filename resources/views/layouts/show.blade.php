@@ -54,6 +54,7 @@
       <nav class="nav-menu d-none d-lg-block">
         <ul>
           <li class="active"><a href="{{ route('contents.index')}}">หน้าแรก</a></li>
+          <li><a href="{{ url('ampher/showall')}}">สถานที่ท่องเที่ยว</a></li>
           <li><a href="{{route('guide.create')}}">แนะนำสถานที่ท่องเที่ยว</a></li>
           <li><a href="{{route('hotels.index')}}">ที่พัก/โรงแรม</a></li>
           <li><a href="{{route('shops.index')}}">ร้านอาหาร/ของฝาก</a></li>
@@ -76,13 +77,14 @@
                 @if (Route::has('login'))
                 <div class="hidden fixed top-0 right-0 px-6 py-4 sm:block">
                     @auth
-                    <a>สวัสดีคุณ, {{ Auth::user()->name }}</a>
+                    <a class="text-primary">สวัสดีคุณ, {{ Auth::user()->name }}</a>
+                    <li><a href="{{ url('admin/config')}}">แผงจัดการข้อมูล</a></li>
                     <li><a href="{{route('contents.create')}}">เพิ่มข้อมูล สถานที่ท่องเที่ยว</a></li>
                     <li><a href="{{route('hotels.create')}}">เพิ่มข้อมูล ที่พัก/โรงแรม</a></li>
                     <li><a href="{{route('shops.create')}}">เพิ่มข้อมูล ร้านอาหาร/ของฝาก</a></li>
                     <form method="POST" action="{{ route('logout') }}">
                         @csrf
-                        <x-responsive-nav-link :href="route('logout')"
+                        <x-responsive-nav-link :href="route('logout')" class="text-danger"
                                 onclick="event.preventDefault();
                                             this.closest('form').submit();">
                             {{ __('Logout') }}
