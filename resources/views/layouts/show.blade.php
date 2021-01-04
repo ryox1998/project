@@ -73,9 +73,29 @@
 
           <li class="drop-down"><a href="#">เจ้าหน้าที่</a>
             <ul>
-              <li><a href="{{route('contents.create')}}">เพิ่มข้อมูล สถานที่ท่องเที่ยว</a></li>
-              <li><a href="{{route('hotels.create')}}">เพิ่มข้อมูล ที่พัก/โรงแรม</a></li>
-              <li><a href="{{route('shops.create')}}">เพิ่มข้อมูล ร้านอาหาร/ของฝาก</a></li>
+                @if (Route::has('login'))
+                <div class="hidden fixed top-0 right-0 px-6 py-4 sm:block">
+                    @auth
+                    <a>สวัสดีคุณ, {{ Auth::user()->name }}</a>
+                    <li><a href="{{route('contents.create')}}">เพิ่มข้อมูล สถานที่ท่องเที่ยว</a></li>
+                    <li><a href="{{route('hotels.create')}}">เพิ่มข้อมูล ที่พัก/โรงแรม</a></li>
+                    <li><a href="{{route('shops.create')}}">เพิ่มข้อมูล ร้านอาหาร/ของฝาก</a></li>
+                    <form method="POST" action="{{ route('logout') }}">
+                        @csrf
+                        <x-responsive-nav-link :href="route('logout')"
+                                onclick="event.preventDefault();
+                                            this.closest('form').submit();">
+                            {{ __('Logout') }}
+                        </x-responsive-nav-link>
+                    </form>
+                    @else
+                    <li><a href="{{ route('login') }}">เข้าสู่ระบบ</a></li>
+                        @if (Route::has('register'))
+                        <li><a href="{{ route('register') }}">สมัครสมาชิก</a></li>
+                        @endif
+                    @endauth
+                </div>
+            @endif
             </ul>
           </li>
 

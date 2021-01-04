@@ -46,6 +46,9 @@
                                             อัพเดทล่าสุด {{ $shop->updated_at }} </p>
                                 <a href="{{ route('shops.show', $shop->id) }}">อ่านเพิ่มเติม</a>
                             </div>
+
+                            @if (Route::has('login'))
+                            @auth
                             <form  align="right" id="cf" class="mt-3 p-3" action="{{ route('shops.destroy', $shop->id) }}"
                                 method="POST">
                                 <a href="{{ route('shops.edit', $shop->id) }}"><img
@@ -56,6 +59,8 @@
                                         src="{{ asset('assets/img/delete.svg') }}" alt="" height="30px"
                                         width="30px"></button>
                             </form>
+                            @endauth
+                            @endif
                         </div>
                     </div>
                 @endforeach

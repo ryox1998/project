@@ -9,6 +9,7 @@ use App\Http\Controllers\AmpherController;
 use Illuminate\Support\Facades\Storage;
 use App\Http\Controllers\LoginController;
 /*
+/*
 |--------------------------------------------------------------------------
 | Web Routes
 |--------------------------------------------------------------------------
@@ -18,6 +19,16 @@ use App\Http\Controllers\LoginController;
 | contains the "web" middleware group. Now create something great!
 |
 */
+
+// Route::get('/', function () {
+//     return view('welcome');
+// });
+
+// Route::get('/dashboard', function () {
+//     return view('dashboard');
+// })->middleware(['auth'])->name('dashboard');
+
+require __DIR__.'/auth.php';
 
 Route::get('/','App\Http\Controllers\ContentCRUDController@index');
 Route::resource('contents', ContentCRUDController::class);

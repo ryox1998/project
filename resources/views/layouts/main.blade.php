@@ -29,14 +29,9 @@
 
 
 <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
-
-
   <!-- Template Main CSS File -->
   <link href="{{ asset('assets/css/style.css') }}" rel="stylesheet">
-
-
   <script defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA5jDH1BL6_WnRSTJHx8BvJBr7V3YiHlT0&callback=initMap"></script>
-
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
 </head>
 <body >
@@ -72,15 +67,37 @@
           </li>
           <li class="drop-down"><a href="#">เจ้าหน้าที่</a>
             <ul>
-              {{-- <li><a href="{{route('loginweb.index')}}">เข้าสู่ระบบ</a></li> --}}
-              <li><a href="{{route('contents.create')}}">เพิ่มข้อมูล สถานที่ท่องเที่ยว</a></li>
-              <li><a href="{{route('hotels.create')}}">เพิ่มข้อมูล ที่พัก/โรงแรม</a></li>
-              <li><a href="{{route('shops.create')}}">เพิ่มข้อมูล ร้านอาหาร/ของฝาก</a></li>
+              @if (Route::has('login'))
+                <div class="hidden fixed top-0 right-0 px-6 py-4 sm:block">
+                    @auth
+                    <a>สวัสดีคุณ, {{ Auth::user()->name }}</a>
+                    <li><a href="{{route('contents.create')}}">เพิ่มข้อมูล สถานที่ท่องเที่ยว</a></li>
+                    <li><a href="{{route('hotels.create')}}">เพิ่มข้อมูล ที่พัก/โรงแรม</a></li>
+                    <li><a href="{{route('shops.create')}}">เพิ่มข้อมูล ร้านอาหาร/ของฝาก</a></li>
+                    <form method="POST" action="{{ route('logout') }}">
+                        @csrf
+                        <x-responsive-nav-link :href="route('logout')"
+                                onclick="event.preventDefault();
+                                            this.closest('form').submit();">
+                            {{ __('Logout') }}
+                        </x-responsive-nav-link>
+                    </form>
+                    {{-- <li><a href="{{ route('logout') }}"></a></li> --}}
+
+                    @else
+                    <li><a href="{{ route('login') }}">เข้าสู่ระบบ</a></li>
+                        @if (Route::has('register'))
+                        <li><a href="{{ route('register') }}">สมัครสมาชิก</a></li>
+                        @endif
+                    @endauth
+                </div>
+            @endif
             </ul>
           </li>
-
         </ul>
       </nav><!-- .nav-menu -->
+
+
 
     </div>
   </header><!-- End Header -->

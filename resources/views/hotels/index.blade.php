@@ -46,6 +46,9 @@
                                             อัพเดทล่าสุด {{ $hotel->updated_at }} </p>
                                 <a href="{{ route('hotels.show', $hotel->id) }}">อ่านเพิ่มเติม</a>
                             </div>
+
+                            @if (Route::has('login'))
+                            @auth
                             <form align="right" id="cf" class="mt-3 p-3" action="{{ route('hotels.destroy', $hotel->id) }}"
                                 method="POST">
                                 <a href="{{ route('hotels.edit', $hotel->id) }}"><img
@@ -56,6 +59,8 @@
                                         src="{{ asset('assets/img/delete.svg') }}" alt="" height="30px"
                                         width="30px"></button>
                             </form>
+                            @endauth
+                            @endif
                         </div>
                     </div>
                 @endforeach

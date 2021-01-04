@@ -2,14 +2,6 @@
 @section('title', 'TAK Travel')
 @section('content')
 
-@if (session()->has('success'))
-
-<script>
-     swal("<?php echo session()->get('success'); ?>", "", "success");
-</script>
-
-@endif
-
     <!-- ======= Team Section ======= -->
     <section id="team" class="team section-bg mt-5">
         <div class="container">
@@ -44,7 +36,8 @@
                                             อัพเดทล่าสุด {{ $content->updated_at }} </p>
                                 <a href="{{ route('contents.show', $content->id) }}">อ่านเพิ่มเติม</a>
                             </div>
-
+                            @if (Route::has('login'))
+                            @auth
                             <form  align="right" id="cf" class="mt-3 p-3" action="{{route('contents.destroy', $content->id) }}"method="POST">
                                 <a href="{{ route('contents.edit', $content->id) }}"><img
                                         src="{{ asset('assets/img/edit.svg') }}" alt="" height="30px" width="30px"></a>
@@ -54,6 +47,8 @@
                                         src="{{ asset('assets/img/delete.svg') }}" alt="" height="30px"
                                         width="30px"> </button>
                             </form>
+                            @endauth
+                            @endif
 
                         </div>
                     </div>
@@ -62,6 +57,12 @@
             <div align="center" class="mt-5">{{ $contents->links() }}</div>
         </div>
     </section><!-- End Team Section -->
+
+    @if (session()->has('success'))
+    <script>
+     swal("<?php echo session()->get('success'); ?>", "", "success");
+    </script>
+    @endif
 
     <script>
         function del() {

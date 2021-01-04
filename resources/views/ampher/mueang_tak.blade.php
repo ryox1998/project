@@ -31,12 +31,16 @@
                 <p>เขียนเมื่อ {{$content->created_at}}</p>
                 <a  href="{{ route('contents.show',$content->id) }}">อ่านเพิ่มเติม</a>
               </div>
+              @if (Route::has('login'))
+              @auth
               <form align = "right" class="mt-3 p-3" action="{{ route('contents.destroy',$content->id) }}" method="POST">
                   <a href="{{ route('contents.edit',$content->id) }}"><img src="{{asset('assets/img/edit.svg')}}" alt="" height="30px" width="30px"></a>
                   @csrf
                   @method('DELETE')
               <button onclick="return confirm('คุณต้องการลบ ใช่ หรือ ไม่')" class="myButton"> <img src="{{asset('assets/img/delete.svg')}}" alt="" height="30px" width="30px"></button>
               </form>
+		@endauth
+        @endif
             </div>
           </div>
 
