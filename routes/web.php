@@ -45,4 +45,6 @@ Route::get('ampher/phop_phra','App\Http\Controllers\AmpherController@phop_phra')
 Route::get('ampher/um_phang','App\Http\Controllers\AmpherController@um_phang');
 Route::get('ampher/wang_chao','App\Http\Controllers\AmpherController@wang_chao');
 Route::get('ampher/showall','App\Http\Controllers\AmpherController@showall');
-Route::get('admin/config','App\Http\Controllers\AmpherController@dashbord');
+Route::get('admin/content','App\Http\Controllers\AmpherController@dashbord');
+Route::get('admin/hotel','App\Http\Controllers\AmpherController@dashbord1');
+Route::get('admin/shop','App\Http\Controllers\AmpherController@dashbord2');

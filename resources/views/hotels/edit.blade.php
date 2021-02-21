@@ -13,6 +13,7 @@
     <div class="d-flex justify-content-center">
     <section id="team" class="team section-bg col-sm-8 mt-6 ">
     <h1>จัดการข้อมูล ที่พัก/โรงแรม</h1>
+    <h6 class="mt-3"><a href="{{ url('admin/hotel')}}">กลับไปยัง แผงจัดการข้อมูล</a></h6>
     <hr> <br>
     <form action="{{ route('hotels.update', $hotel->id) }}" method="POST" enctype="multipart/form-data">
         @csrf

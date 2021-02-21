@@ -6,6 +6,7 @@
 <div class="d-flex justify-content-center">
 <section id="team" class="team section-bg col-sm-8 mt-6 ">
 <h1 class="mt-5">เพิ่มข้อมูล ร้านค้า/ของฝาก</h1>
+<h6 class="mt-3"><a href="{{ url('admin/shop')}}">กลับไปยัง แผงจัดการข้อมูล</a></h6>
 <hr><br>
 
 <form action="{{ route('shops.store')}}" method="POST" enctype="multipart/form-data">
