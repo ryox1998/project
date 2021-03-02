@@ -83,7 +83,7 @@
                 <br>
 
                 <div class="col-12 col-md-6">
-                    <label for="use_km">เลือก รัศมีในการเดินทางไปยังสถานที่ท่องเที่ยว</label>
+                    <label for="use_km">รัศมีในการเดินทางไปยังสถานที่ท่องเที่ยว</label>
                     <select class="form-control" name="use_km">
                         {{-- <option value="10">ช่วง 10 Km.</option> --}}
                         <option value="20">ช่วง 20 Km.</option>
