@@ -7,7 +7,7 @@
             <h1 class="col-sm-8 mt-5">แนะนำสถานที่ท่องเที่ยว</h1>
             <form method="POST" action="{{ route('guide.store') }}" enctype="multipart/form-data">
                 @csrf
-                <div class="col-12 col-md-6 mt-3">
+                {{-- <div class="col-12 col-md-6 mt-3">
                     <label for="use_people">มาเที่ยวกี่คน</label>
                     <select class="form-control" name="use_people">
                         <option>เที่ยวเดี่ยว</option>
@@ -15,7 +15,7 @@
                         <option>เที่ยวแบบกลุ่ม</option>
                         <option>เที่ยวแบบหมู่คณะ</option>
                     </select>
-                </div>
+                </div> --}}
                 <br>
 
                 <p class="col-12 col-md-6">รูปแบบการท่องเที่ยว</p>
@@ -36,7 +36,7 @@
                     <div class="alert alert-danger mb-1 mt-1">{{ $message }}</div>
                 @enderror
 
-                <div class="col-12 col-md-6">
+                {{-- <div class="col-12 col-md-6">
                     <br>
                     <label for="use_day">ระยะเวลาในการเที่ยว</label>
                     <select class="form-control" name="use_day">
@@ -46,51 +46,53 @@
                         <option value="4 วัน">4 วัน</option>
                         <option value="5 วัน">5 วันขึ้นไป</option>
                     </select>
-                </div>
+                </div> --}}
+                            <br>
+                                {{-- Show Lat and Long --}}
+                            <a class="col-sm-8 mt-4 pl-3 text-danger mt-3" href="#" rel="noreferrer" onclick="getLocation()"><img
+                                    src="{{ asset('assets/img/location.svg') }}" alt="" height="15px"
+                                    width="15px"><U><small><strong>คลิกเพื่อหาตำแหน่งปัจจุบันและกรุณารอซักครู่ !!</strong></small></U></a>
+                            <p hidden class="mt-3 pl-3 text-primary" id="location"></p>
+
+                            {{-- End Show Lat and Long --}}
+
+                            {{-- input Latitude --}}
+                            <div class="input-group col-12 col-md-6 ">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text" id="num">ละติจูด</span>
+                                </div>
+                                <input id="Latitude" type="text" class="float form-control" placeholder="Latitude" aria-label="Username"
+                                    name="Latitude" aria-describedby="basic-addon1" >
+                            </div>
+                            @error('Latitude')
+                                <div class="alert alert-danger mb-1 mt-1">{{ $message }}</div>
+                            @enderror
+                            {{-- End input Latitude --}}
+
+
+                            {{-- input Longitude --}}
+                            <div class="input-group col-12 col-md-6 mt-3">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text" id="num">ลองติจูด</span>
+                                </div>
+                                <input id="Longitude" type="text" class="float form-control" placeholder="Longitude" aria-label="Username"
+                                    name="Longitude" aria-describedby="basic-addon1">
+                            </div>
+
+                            {{-- End input Longitude --}}
+                <br>
+
                 <div class="col-12 col-md-6">
-                    <label for="use_km">ระยะทางในการเดินทาง</label>
+                    <label for="use_km">เลือก รัศมีในการเดินทางไปยังสถานที่ท่องเที่ยว</label>
                     <select class="form-control" name="use_km">
-                        <option value="10">ช่วง 10 Km.</option>
+                        {{-- <option value="10">ช่วง 10 Km.</option> --}}
                         <option value="20">ช่วง 20 Km.</option>
-                        <option value="30">ช่วง 30 Km.</option>
+                        {{-- <option value="30">ช่วง 30 Km.</option> --}}
                         <option value="40">ช่วง 40 Km.</option>
-                        <option value="50">ช่วง 50 Km. ขึ้นไป</option>
+                        <option value="50">ภายในจังหวัดตาก</option>
                     </select>
                 </div>
 
-                <br>
-                {{-- Show Lat and Long --}}
-                <a class="col-sm-8 mt-4 pl-3 text-danger " href="#" rel="noreferrer" onclick="getLocation()"><img
-                        src="{{ asset('assets/img/location.svg') }}" alt="" height="15px"
-                        width="15px"><U><small><strong>คลิกเพื่อหาตำแหน่งปัจจุบันและกรุณารอซักครู่ !!</strong></small></U></a>
-                <p hidden class="mt-3 pl-3 text-primary" id="location"></p>
-
-                {{-- End Show Lat and Long --}}
-
-                {{-- input Latitude --}}
-                <div class="input-group col-12 col-md-6 ">
-                    <div class="input-group-prepend">
-                        <span class="input-group-text" id="num">ละติจูด</span>
-                    </div>
-                    <input id="Latitude" type="text" class="float form-control" placeholder="Latitude" aria-label="Username"
-                        name="Latitude" aria-describedby="basic-addon1" >
-                </div>
-                @error('Latitude')
-                    <div class="alert alert-danger mb-1 mt-1">{{ $message }}</div>
-                @enderror
-                {{-- End input Latitude --}}
-
-
-                {{-- input Longitude --}}
-                <div class="input-group col-12 col-md-6 mt-3">
-                    <div class="input-group-prepend">
-                        <span class="input-group-text" id="num">ลองติจูด</span>
-                    </div>
-                    <input id="Longitude" type="text" class="float form-control" placeholder="Longitude" aria-label="Username"
-                        name="Longitude" aria-describedby="basic-addon1">
-                </div>
-
-                {{-- End input Longitude --}}
 
                 @error('Longitude')
                     <div class="alert alert-danger mb-1 mt-1">{{ $message }}</div>
