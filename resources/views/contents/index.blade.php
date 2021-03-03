@@ -19,8 +19,8 @@
                     <div class="col-lg-4 col-md-6 d-flex align-items-stretch">
 
                         <div class="member">
-                            {{-- <img class="position-absolute" src="{{ asset('assets/img/newl.svg') }}" height="45px"
-                                width="45px"> --}}
+
+                            <img class="position-absolute" src="{{ asset('assets/img/newl.svg') }}" height="45px" width="45px">
                             <img class="page-content" src="{{ asset('assets/images/'.$content->image) }}" height="154.89px"
                                 width="275px" />
                             <a href="{{ route('contents.show', $content->id) }}">
