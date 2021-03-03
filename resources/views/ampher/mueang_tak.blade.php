@@ -16,8 +16,6 @@
       </div>
       <div class="row">
         @foreach ($contents as $content)
-        @if ($content->ampher == "เมืองตาก")
-
         <div class="col-lg-4 col-md-6 d-flex align-items-stretch">
             <div class="member">
               <img  class="page-content" src="{{ asset('assets/images/'.$content->image) }}" height="154.89px" width="275px"  alt="" />
@@ -43,8 +41,6 @@
         @endif
             </div>
           </div>
-
-        @endif
         @endforeach
       </div>
       <div align ="center" class="mt-5">{{ $contents->links() }}</div>

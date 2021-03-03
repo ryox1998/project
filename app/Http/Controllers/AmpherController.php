@@ -11,8 +11,10 @@ class AmpherController extends Controller
 {
     public function mueang_tak () {
 
-        $data['contents'] = Content::orderBy('id','desc')->simplePaginate(3);
+        $data['contents'] = Content::where('ampher','เมืองตาก')->simplePaginate(3);
+
         return view('ampher.mueang_tak',$data);
+
     }
 
     public function ban_tak () {
@@ -20,8 +22,6 @@ class AmpherController extends Controller
         $data['contents'] = Content::orderBy('id','desc')->simplePaginate(3);
         return view('ampher.ban_tak',$data);
     }
-
-
 
 
     public function sam_ngao () {

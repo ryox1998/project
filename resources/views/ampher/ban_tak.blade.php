@@ -15,6 +15,7 @@
         </p>
       </div>
       <div class="row">
+
         @foreach ($contents as $content)
         @if ($content->ampher == "บ้านตาก")
 
@@ -45,11 +46,11 @@
         @endif
             </div>
           </div>
-          {{ $contents->links() }}
+
         @endif
         @endforeach
       </div>
-      <div align ="center" class="mt-5"></div>
+      <div align ="center" class="mt-5">{{ $contents->links() }}</div>
     </div>
   </section><!-- End Team Section -->
 
