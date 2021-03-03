@@ -44,7 +44,7 @@
                                   <span>อำเภอ {{$content->ampher}}</span> <hr> <br>
                                       <p class="a">{{$content->detail}}</p>
                                   <div class="social">
-                                    <a href="https://www.facebook.com/taktravel" target="_blank" ><i class="icofont-facebook"></i></a>
+                                    <a href="https://www.facebook.com/taktravel/" target="_blank" ><i class="icofont-facebook"></i></a>
                                     <a href="https://www.instagram.com/taktravel/" target="_blank"><i class="icofont-instagram"></i></a>
                                     <p>เขียนเมื่อ {{$content->created_at}}</p>
                                     <a  href="{{ route('contents.show',$content->id) }}">อ่านเพิ่มเติม</a>
