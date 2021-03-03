@@ -17,6 +17,7 @@ class GuideController extends Controller
      */
     public function index(Request $request)
     {
+
         $use_people = $request->session()->get('use_people');
         $use_type = $request->session()->get('use_type');
         $use_day = $request->session()->get('use_day');
@@ -26,17 +27,21 @@ class GuideController extends Controller
 
         $type = "";
         foreach ((array)$use_type as $value) {
+
             $type = $type.$value;
+
         }
 
         // ->orWhere('type', '')
             if ($type == "ด้านธรรมชาติ") {
+
                 // return dd('A');
                 $data['contents'] = Content::where('type','["\u0e14\u0e49\u0e32\u0e19\u0e18\u0e23\u0e23\u0e21\u0e0a\u0e32\u0e15\u0e34"]')->orWhere('type', '["\u0e14\u0e49\u0e32\u0e19\u0e18\u0e23\u0e23\u0e21\u0e0a\u0e32\u0e15\u0e34","\u0e14\u0e49\u0e32\u0e19\u0e27\u0e31\u0e12\u0e19\u0e18\u0e23\u0e23\u0e21\u0e1b\u0e23\u0e30\u0e40\u0e1e\u0e13\u0e35\u0e27\u0e34\u0e16\u0e35\u0e0a\u0e35\u0e27\u0e34\u0e15"]')->orWhere('type', '["\u0e14\u0e49\u0e32\u0e19\u0e18\u0e23\u0e23\u0e21\u0e0a\u0e32\u0e15\u0e34","\u0e14\u0e49\u0e32\u0e19\u0e2a\u0e34\u0e48\u0e07\u0e17\u0e35\u0e48\u0e21\u0e19\u0e38\u0e29\u0e22\u0e4c\u0e2a\u0e23\u0e49\u0e32\u0e07\u0e02\u0e36\u0e49\u0e19"]')->orWhere('type', '["\u0e14\u0e49\u0e32\u0e19\u0e18\u0e23\u0e23\u0e21\u0e0a\u0e32\u0e15\u0e34","\u0e14\u0e49\u0e32\u0e19\u0e27\u0e31\u0e12\u0e19\u0e18\u0e23\u0e23\u0e21\u0e1b\u0e23\u0e30\u0e40\u0e1e\u0e13\u0e35\u0e27\u0e34\u0e16\u0e35\u0e0a\u0e35\u0e27\u0e34\u0e15","\u0e14\u0e49\u0e32\u0e19\u0e2a\u0e34\u0e48\u0e07\u0e17\u0e35\u0e48\u0e21\u0e19\u0e38\u0e29\u0e22\u0e4c\u0e2a\u0e23\u0e49\u0e32\u0e07\u0e02\u0e36\u0e49\u0e19"]')->simplePaginate(3);
                 // return dd($data);
 
             }
             else if ($type == "ด้านวัฒนธรรมประเพณีวิถีชีวิต") {
+
                 // return dd('B');
                 $data['contents'] = Content::where('type','["\u0e14\u0e49\u0e32\u0e19\u0e27\u0e31\u0e12\u0e19\u0e18\u0e23\u0e23\u0e21\u0e1b\u0e23\u0e30\u0e40\u0e1e\u0e13\u0e35\u0e27\u0e34\u0e16\u0e35\u0e0a\u0e35\u0e27\u0e34\u0e15"]')->orWhere('type', '["\u0e14\u0e49\u0e32\u0e19\u0e27\u0e31\u0e12\u0e19\u0e18\u0e23\u0e23\u0e21\u0e1b\u0e23\u0e30\u0e40\u0e1e\u0e13\u0e35\u0e27\u0e34\u0e16\u0e35\u0e0a\u0e35\u0e27\u0e34\u0e15","\u0e14\u0e49\u0e32\u0e19\u0e2a\u0e34\u0e48\u0e07\u0e17\u0e35\u0e48\u0e21\u0e19\u0e38\u0e29\u0e22\u0e4c\u0e2a\u0e23\u0e49\u0e32\u0e07\u0e02\u0e36\u0e49\u0e19"]')->simplePaginate(3);
 
@@ -128,8 +133,6 @@ class GuideController extends Controller
             $request->session()->put('Longitude', $Longitude);
 
         }
-
-
 
         // $use_type = $request->get('use_type');
         // $use_day = $request->get('use_day');
