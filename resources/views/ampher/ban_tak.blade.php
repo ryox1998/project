@@ -45,11 +45,11 @@
         @endif
             </div>
           </div>
-
+          {{ $contents->links() }}
         @endif
         @endforeach
       </div>
-      <div align ="center" class="mt-5">{{ $contents->links() }}</div>
+      <div align ="center" class="mt-5"></div>
     </div>
   </section><!-- End Team Section -->
 
