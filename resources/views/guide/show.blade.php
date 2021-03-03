@@ -15,7 +15,12 @@
             </div>
 
             <div class="row">
+
                 @foreach ($contents as $content) {{--loopแสดงเนื้อหาสถานที่ท่องเที่ยว --}}
+
+
+
+
                         @switch($use_km)
                         @case(20)
                         <?php
@@ -58,7 +63,10 @@
                                 </div>
                               </div>
                          @endif
-                            @break  {{-- case2 --}}
+                            @break  {{-- case1 --}}
+
+
+
 
                             @case(40)
                             <?php
@@ -103,6 +111,10 @@
                             @break  {{-- case2 --}}
 
 
+
+
+
+
                             @case(50)
                             <?php
                             $lat1 = $Latitude ;
@@ -143,7 +155,10 @@
                                     </div>
                                   </div>
                              @endif
-                            @break  {{-- case2 --}}
+                            @break  {{-- case3 --}}
+
+
+
                         @default
                     @endswitch
                 @endforeach {{-- Endloopแสดงข้อมูลประเภทการท่องเที่ยวของContent --}}
