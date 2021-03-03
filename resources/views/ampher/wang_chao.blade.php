@@ -16,7 +16,7 @@
       </div>
       <div class="row">
         @foreach ($contents as $content)
-        @if ($content->ampher == "วังเจ้า")
+
 
         <div class="col-lg-4 col-md-6 d-flex align-items-stretch">
             <div class="member">
@@ -44,7 +44,7 @@
             </div>
           </div>
 
-        @endif
+
         @endforeach
       </div>
       <div align ="center" class="mt-5">{{ $contents->links() }}</div>

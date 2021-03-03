@@ -19,56 +19,56 @@ class AmpherController extends Controller
 
     public function ban_tak () {
 
-        $data['contents'] = Content::orderBy('id','desc')->simplePaginate(3);
+        $data['contents'] = Content::where('ampher','บ้านตาก')->simplePaginate(3);
         return view('ampher.ban_tak',$data);
     }
 
 
     public function sam_ngao () {
 
-        $data['contents'] = Content::orderBy('id','desc')->simplePaginate(3);
+        $data['contents'] = Content::where('ampher','สามเงา')->simplePaginate(3);
         return view('ampher.sam_ngao',$data);
     }
 
 
     public function measot () {
 
-        $data['contents'] = Content::orderBy('id','desc')->simplePaginate(3);
+        $data['contents'] = Content::where('ampher','แม่สอด')->simplePaginate(3);
         return view('ampher.measot',$data);
     }
 
 
     public function mae_ramat () {
 
-        $data['contents'] = Content::orderBy('id','desc')->simplePaginate(3);
+        $data['contents'] = Content::where('ampher','แม่ระมาด')->simplePaginate(3);
         return view('ampher.mae_ramat',$data);
     }
 
 
     public function tha_song_yang () {
 
-        $data['contents'] = Content::orderBy('id','desc')->simplePaginate(3);
+        $data['contents'] = Content::where('ampher','ท่าสองยาง')->simplePaginate(3);
         return view('ampher.tha_song_yang',$data);
     }
 
 
     public function phop_phra () {
 
-        $data['contents'] = Content::orderBy('id','desc')->simplePaginate(3);
+        $data['contents'] = Content::where('ampher','พบพระ')->simplePaginate(3);
         return view('ampher.phop_phra',$data);
     }
 
 
     public function um_phang () {
 
-        $data['contents'] = Content::orderBy('id','desc')->simplePaginate(3);
+        $data['contents'] = Content::where('ampher','อุ้มผาง')->simplePaginate(3);
         return view('ampher.um_phang',$data);
     }
 
 
     public function wang_chao () {
 
-        $data['contents'] = Content::orderBy('id','desc')->simplePaginate(3);
+        $data['contents'] = Content::where('ampher','วังเจ้า')->simplePaginate(3);
         return view('ampher.wang_chao',$data);
     }
 
