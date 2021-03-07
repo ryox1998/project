@@ -78,8 +78,8 @@
 
 
 
-    {{-- ที่พัก/โรงแรมที่ไกล้เคียง --}}
-    <h5 class="title mt-5"> ● ที่พัก/โรงแรมที่ไกล้เคียง : </h5> <hr>
+    {{-- ร้านอาหาร/ของฝาก --}}
+    <h5 class="title mt-5"> ● ร้านอาหาร/ของฝาก : </h5> <hr>
     <div class="row">
 
     @foreach ($shops as $shop)
@@ -94,11 +94,11 @@
     $dist = acos($dist);
     $dist = rad2deg($dist);
     $miles = $dist * 60 * 1.1515;
-    $km = $miles * 1.609344 ;
+    $skm = $miles * 1.609344 ;
 
      ?>
 
-     @if ($km<5)
+     @if ($skm<5)
      <div class="ml-1 col-lg-4 col-md-6 d-flex align-items-stretch ">
         <div class="member">
             <img class="page-content" src="{{ asset('assets/images/'.$shop->s_image) }}" height="154.89px"
@@ -121,7 +121,7 @@
      @else
      {{-- ไม่มีทีพัก --}}
      <div class="col-lg-6 col-md-6 d-flex align-items-stretch">
-      <center><strong><p class="text-danger pl-3"><img src="{{ asset('assets/img/cancel.svg') }}" alt="" height="15px" width="15px">    ไม่มี ที่พัก/โรงแรมที่ไกล้เคียงท่าน ในรัศมี 5 Km. ขออภัยด้วยครับ </p></strong></center>
+      <center><strong><p class="text-danger pl-3"><img src="{{ asset('assets/img/cancel.svg') }}" alt="" height="15px" width="15px">    ไม่มี ร้านอาหาร/ของฝากที่ไกล้เคียงท่าน ในรัศมี 5 Km. ขออภัยด้วยครับ </p></strong></center>
       </div>
       {{-- ไม่มีทีพัก --}}
           @break
