@@ -39,9 +39,9 @@
                     <tbody>
                         @foreach ($shops as $shop)
                         <tr>
-                        
-                          <td>{{ $shop->h_name}}</td>
-                          <td>{{ $shop->h_ampher }}</td>
+
+                          <td>{{ $shop->s_name}}</td>
+                          <td>{{ $shop->s_ampher }}</td>
                           <td>{{ $shop->created_at}}</td>
                           <td>{{ $shop->updated_at}}</td>
                           <td><form id="cf" class="mt-3 p-3" action="{{route('shops.destroy', $shop->id) }}"method="POST">

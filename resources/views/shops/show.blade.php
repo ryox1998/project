@@ -25,7 +25,7 @@
         <div align="center"> <img src="{{ asset('assets/images/'.$shop->s_image) }}" height="100%" width="100%" alt="" /></div>
     </div>
   <div class="section-title ">
-    <h2>{{($shop->shop_name)}}</h2>
+    <h2>{{($shop->s_name)}}</h2>
     <h5>อำเภอ {{$shop->s_ampher}}</h5>
   </div>
   <h5 class="title mt-3"> ● รายละเอียด : </h5> <hr>
