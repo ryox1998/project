@@ -43,7 +43,7 @@
    ?>
 
    @if ($km<5)
-   <div class="col-lg-4 col-md-6 d-flex align-items-stretch">
+   <div class="col-lg-4 col-md-6 d-flex align-items-stretch ml-3">
       <div class="member">
           <img class="page-content" src="{{ asset('assets/images/'.$hotel->h_image) }}" height="154.89px"
               width="275px" />
