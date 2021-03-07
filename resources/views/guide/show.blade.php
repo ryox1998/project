@@ -68,7 +68,7 @@
 
 
 
-                            @case(40)
+                            @case(50)
                             <?php
                             $lat1 = $Latitude ;
                             $lon1 = $Longitude;
@@ -82,7 +82,7 @@
                             $km = $miles * 1.609344 ;
                              ?>
 
-                             @if ($km <=40)
+                             @if ($km <=50)
                                  <div class="col-lg-4 col-md-6 d-flex align-items-stretch">
                                     <div class="member">
                                       <img  class="page-content" src="{{ asset('assets/images/'.$content->image) }}" height="154.89px" width="275px"  alt="" />
@@ -115,7 +115,7 @@
 
 
 
-                            @case(50)
+                            @case(60)
                             <?php
                             $lat1 = $Latitude ;
                             $lon1 = $Longitude;

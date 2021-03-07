@@ -88,10 +88,13 @@
                         {{-- <option value="10">ช่วง 10 Km.</option> --}}
                         <option value="20">ช่วง 20 Km.</option>
                         {{-- <option value="30">ช่วง 30 Km.</option> --}}
-                        <option value="40">ช่วง 40 Km.</option>
-                        <option value="50">ภายในจังหวัดตาก</option>
+                        <option value="50">ช่วง 50 Km.</option>
+                        <option value="60">มากกว่า 50 Km.</option>
                     </select>
                 </div>
+
+
+                <h6 class="col-sm-8 mt-4 pl-3 text-danger mt-3"><small><strong>(ข้อมูลที่ได้อ้างอิงจาก สำนักงานการท่องเที่ยว ตาก)</strong></small></h6>
 
 
                 @error('Longitude')

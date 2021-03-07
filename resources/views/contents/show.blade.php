@@ -43,7 +43,7 @@
    ?>
 
    @if ($km<5)
-   <div class="ml-1 col-lg-4 col-md-6 d-flex align-items-stretch ">
+   <div class="col-lg-4 col-md-6 d-flex align-items-stretch ">
       <div class="member">
           <img class="page-content" src="{{ asset('assets/images/'.$hotel->h_image) }}" height="154.89px"
               width="275px" />
@@ -99,7 +99,7 @@
      ?>
 
      @if ($skm<5)
-     <div class="ml-1 col-lg-4 col-md-6 d-flex align-items-stretch ">
+     <div class="col-lg-4 col-md-6 d-flex align-items-stretch ">
         <div class="member">
             <img class="page-content" src="{{ asset('assets/images/'.$shop->s_image) }}" height="154.89px"
                 width="275px" />

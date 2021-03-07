@@ -104,8 +104,8 @@ class ContentCRUDController extends Controller
      */
     public function show(Content $content)
     {
-        $h_data['hotels'] = hotel::orderBy('id','desc')->simplePaginate(3);
-        $h_data['shops'] = Shop::orderBy('id','desc')->simplePaginate(3);
+        $h_data['hotels'] = hotel::simplePaginate(3);
+        $h_data['shops'] = Shop::simplePaginate(3);
         return view('contents.show',$h_data,compact('content'));
     }
 
