@@ -26,7 +26,7 @@
   <h5 class="title mt-5"> ● ที่พัก/โรงแรมที่ไกล้เคียง : </h5> <hr>
   <div class="row">
 
-    @foreach ($hotels as $hotel)
+  @foreach ($hotels as $hotel)
 
   <?php
   $lat1 = $content->lat ;
@@ -74,64 +74,6 @@
   </div>
 
   {{-- ที่พัก/โรงแรมที่ไกล้เคียง --}}
-
-
-
-  {{-- ร้านอาหารที่ไกล้เคียง --}}
-  <h5 class="title mt-5"> ● ที่พัก/โรงแรมที่ไกล้เคียง : </h5> <hr>
-  <div class="row">
-
-    @foreach ($shops as $shop)
-
-  <?php
-  $lat1 = $content->lat ;
-  $lon1 = $content->long;
-  $lat2 = $shop->s_lat;
-  $lon2 = $shop->s_long;
-  $theta = $lon1 - $lon2;
-  $dist = sin(deg2rad($lat1)) * sin(deg2rad($lat2)) +  cos(deg2rad($lat1)) * cos(deg2rad($lat2)) * cos(deg2rad($theta));
-  $dist = acos($dist);
-  $dist = rad2deg($dist);
-  $miles = $dist * 60 * 1.1515;
-  $km = $miles * 1.609344 ;
-
-   ?>
-
-   @if ($km<5)
-   <div class="col-lg-4 col-md-6 d-flex align-items-stretch">
-      <div class="member">
-          <img class="page-content" src="{{ asset('assets/images/'.$shop->s_image) }}" height="154.89px"
-              width="275px" />
-          <a href="{{ route('shops.show', $shop->id) }}">
-              <h4> {{ $shop->s_name }}</h4>
-          </a>
-          <span>อำเภอ {{ $shop->s_name }}</span>
-          <hr> <br>
-          <p class="a">{{ $shop->s_detail }}</p>
-
-          <div class="social">
-              <p> เขียนเมื่อ {{ $shop->created_at }} <br>
-                  อัพเดทล่าสุด {{ $shop->updated_at }} </p>
-              <a href="{{ route('shops.show', $shop->id) }}">ดูข้อมูลเพิ่มเติม</a>
-          </div>
-      </div>
-  </div>
-
-   @else
-   {{-- ไม่ร้านอาหารที่ไกล้เคียง --}}
-   <div class="col-lg-6 col-md-6 d-flex align-items-stretch">
-    <center><strong><p class="text-danger pl-3"><img src="{{ asset('assets/img/cancel.svg') }}" alt="" height="15px" width="15px">    ไม่มี ร้านอาหารที่ไกล้เคียง ในรัศมี 5 Km. ขออภัยด้วยครับ </p></strong></center>
-    </div>
-    {{-- ไม่ร้านอาหารที่ไกล้เคียง --}}
-        @break
-   @endif
-    @endforeach
-  </div>
-
-  {{-- ร้านอาหารที่ไกล้เคียง --}}
-
-
-
 
   <hr>
   <center><h6 class="mt-3"> <strong> <img src="{{ asset('assets/img/human.svg') }}" alt="" height="30px" width="30px">  Tag : {{$content->people}} @foreach ((array)$content->type as $value) , {{$value}} @endforeach </strong> </h6></center>
